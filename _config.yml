@@ -1,0 +1,22 @@
+remote_theme: pmarsceill/just-the-docs
+repository: Timberborn-Modding-Central/TimberAPI
+url: "https://timberborn-modding-central.github.io"
+baseurl: "TimberAPI_Docs"
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-last-modified-at
+
+# Just the docs config
+logo: "https://gcdn.thunderstore.io/live/repository/icons/Timberborn_Central-TimberAPI-0.3.2.png.128x128_q95.jpg"
+title: "TimberAPI"
+aux_links:
+  "TimberAPI on GitHub":
+    - "//github.com/Timberborn-Modding-Central/TimberAPI"
+aux_links_new_tab: false
+gh_edit_link: true # show or hide edit this page link
+gh_edit_link_text: "Edit this page on GitHub."
+gh_edit_repository: "https://github.com/Timberborn-Modding-Central/TimberAPI" # the github URL for your repo
+gh_edit_branch: "main" # the branch that your docs is served from
+gh_edit_source: docs # the source that your files originate from
+gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
