@@ -1,7 +1,7 @@
 remote_theme: pmarsceill/just-the-docs
 repository: Timberborn-Modding-Central/TimberAPI
-url: "https://timberborn-modding-central.github.io"
-baseurl: "TimberAPI_Docs"
+url: "https://timberapi.com"
+baseurl: ""
 
 plugins:
   - jekyll-remote-theme
