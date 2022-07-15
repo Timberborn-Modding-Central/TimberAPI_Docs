@@ -11,7 +11,7 @@ parent: Specifications
 {: .no_toc }
 
 Here can you find all Timberborns specification schemas, this will help you how to overwrite or create specifications.
-For more examples decompile timberborns assets.
+For examples of all existing specifications check out the [TimberAPI Example](https://github.com/Timberborn-Modding-Central/TimberAPI/tree/main/TimberAPIExample/ExampleAssets/Specifications/v0.2.1.0). Or decompile the assets from Timberborn.
 
 ## Table of contents
 {: .no_toc .text-delta }
