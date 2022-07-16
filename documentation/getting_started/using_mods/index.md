@@ -1,5 +1,5 @@
 ﻿---
-title: Using mods
+title: Using Mods
 permalink: /using_mods/
 nav_order: -90
 layout: page

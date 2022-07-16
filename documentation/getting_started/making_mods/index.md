@@ -1,5 +1,5 @@
 ﻿---
-title: Making mods
+title: Making Mods
 permalink: /making_mods/
 nav_order: -80
 layout: page
