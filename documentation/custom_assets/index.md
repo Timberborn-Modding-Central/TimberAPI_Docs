@@ -1,12 +1,12 @@
 ﻿---
-title: Custom assets
+title: Custom Assets
 permalink: /custom_assets/
 nav_order: 300
 layout: page
 has_toc: false
 has_children: true
 ---
-# Custom assets
+# Custom Assets
 {: .no_toc }
 
 TimberAPI gives the possibility to add custom assets to the game.
@@ -18,7 +18,7 @@ To make assets of all mods sharable we are using unique prefixes to separate eac
 1. TOC
 {:toc}
 
-## Register custom assets
+## Register Custom Assets
 To load all assets within the folder assets relative of your mod dll add the following line to the main mod file.
 ```csharp
 // Plugin.cs (Standard BepInEx generated file)

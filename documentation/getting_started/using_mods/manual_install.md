@@ -1,10 +1,10 @@
 ﻿---
-title: Manual install
+title: Manual Install
 permalink: /using_mods/manual_install/
 nav_order: 0
 layout: page
 has_toc: true
-parent: Using mods
+parent: Using Mods
 ---
 
 # Manual Installation
