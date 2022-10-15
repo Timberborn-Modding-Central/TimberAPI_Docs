@@ -9,20 +9,21 @@ has_children: true
 # Other TimberAPI Features
 {: .no_toc }
 
+## Entity Linker
 
-## Event Listening
-1. Extend the TimberAPI Event Listener class, which will automatically hook the eventbus
-2. Listen to an event with `[OnEvent]`
+TimberAPI adds a custom `EntityLinker` Monobehaviour class to all buildings in the game. The `EntityLinker` class can be used to link two entities with eachother. A new link creates a new instance of `EntityLink` which is stored in both the linker and linkees `EntityLinks` property.
+1. Creating a new link
 ```csharp
-public class ExampleListener : EventListener {
-    [OnEvent]
-    public void OnDroughtStarted(DroughtStartedEvent droughtStartedEvent) {...}
+var linker = gameObject.GetComponent<EntityLinker>();
+var linkee = otherGameObject.GetComponent<EntityLinker>();
+linker.CreateLink(linkee);
 ```
-3. Register your class with the game through a configurator (see Dependency Injection above)
+2. Deleting a link
+```csharp
+var linker = gameObject.GetComponent<EntityLinker>();
+linker.DeleteLink(linker.EntityLinks.First());
+```
 
-## Localization Labels 
-1. Add a label
-```csharp
-TimberAPI.Localization.AddLabel("ExampleMod.ToolGroups.ExampleToolGroup", "Example Label");
-```
-You can also add a labels file in a folder called `lang` in your plugin. Example: `lang/enUS.txt`
+How to use these links is left to the modder. 
+See the EntityLinkerExample on the [TimberAPI Examples](https://github.com/Timberborn-Modding-Central/TimberAPI/tree/main/TimberAPIExample) for an example implementation.
+

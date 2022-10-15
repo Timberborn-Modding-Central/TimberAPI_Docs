@@ -19,30 +19,33 @@ To make assets of all mods sharable we are using unique prefixes to separate eac
 {:toc}
 
 ## Register Custom Assets
-To load all assets within the folder assets relative of your mod dll add the following line to the main mod file.
-```csharp
-// Plugin.cs (Standard BepInEx generated file)
-...
-public void Awake()
-{
-    ...
-    TimberAPI.AssetRegistry.AddSceneAssets("PreFix", SceneEntryPoint.InGame);
-}
-```
-*SceneEntryPoints: `InGame`, `MainMenu`, `MapEditor`, `Global`  
+Assets are loaded from the `assets` folder at the mods root. The folder should contain an asset bundle, which contains all the assets the mod uses.
 
-To use a custom asset location. This can be used to have different prefixes or load other assets in different scenes.
-```csharp
-// Plugin.cs (Standard BepInEx generated file)
+To register the assets, add an `Assets` element into your mod.json. Example below
+```json
 ...
-public void Awake()
-{
-    ...
-    TimberAPI.AssetRegistry.AddSceneAssets("PreFix", SceneEntryPoint.InGame, new []{ "assets", "ingame" });
-}
+"Assets": [
+    {
+      "Prefix": "MyPrefix",
+      "Scenes": [
+        "InGame"
+      ]
+    }
+  ]
+...
 ```
+
+This registers the assets with the given prefix. The assets are loaded in the given scenes.
+*SceneEntryPoints: `InGame`, `MainMenu`, `MapEditor`, `All` 
 
 ## Using custom assets
+The assets can be used in the game from eitehr specifications or straight from code.
+
+### From specifications
+Some specifications have elements that use assets as their values. You can use your assets in those by using syntax `<MyPrefix>/<MyBundleName>/<MyAssetName>`
+
+### From code
+
 TimberAPI provides the interface `IAssetLoader` to load everyone's custom assets. Request this interface in any class you want.  
   
 The asset string builds as following

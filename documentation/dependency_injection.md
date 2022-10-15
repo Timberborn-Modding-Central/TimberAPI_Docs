@@ -20,6 +20,7 @@ Timberborn has very robust Dependency Injection for a game. This means you can a
 The configurators let you bind classes to the dependency injection system.
 ```csharp
 // ExampleConfigurator.cs
+[Configurator(SceneEntrypoint.InGame)]  // This attribute registers the configurator and tells where it should be loaded
 public class ExampleConfigurator : IConfigurator {
     public void Configure(IContainerDefinition containerDefinition) {
         containerDefinition.Bind<Foo>().AsSingleton();
@@ -27,19 +28,7 @@ public class ExampleConfigurator : IConfigurator {
     }
 }
 ```
-
-### Register configurator
-The configurator will not active automatically. You need to do this within your main mod file.
-```csharp
-// Plugin.cs (Standard BepInEx generated file)
-...
-public void Awake()
-{
-    ...
-    TimberAPI.DependencyRegistry.AddConfigurator(new ExampleConfigurator(), SceneEntryPoint.InGame);
-}
-```
-*SceneEntryPoints: `InGame`, `MainMenu`, `MapEditor`, `Global`
+*SceneEntryPoints: `InGame`, `MainMenu`, `MapEditor`, `All`
 
 ## Using your registered/bound code
 As long as the class you are trying to use and your class are both bound (with Bind<> and the `Configurator` is registered within the same entrypoint), you can then use that service!

@@ -425,62 +425,6 @@ For examples of all existing specifications check out the [TimberAPI Example](ht
 }
 ```
 
-# NeedAffectedByHeat
-```json
-{
-    "type": "object",
-    "properties": {
-        "NeedId": {
-            "type": "string",
-            "examples": [
-                "Overheat"
-            ]
-        },
-        "PointsPerHourOutsideDay": {
-            "type": "number",
-            "examples": [
-                -0.25
-            ]
-        },
-        "PointsPerHourOutsideNight": {
-            "type": "number",
-            "examples": [
-                -0.1
-            ]
-        },
-        "PointsPerHourInsideDay": {
-            "type": "number",
-            "examples": [
-                -0.025
-            ]
-        },
-        "PointsPerHourInsideNight": {
-            "type": "integer",
-            "examples": [
-                0
-            ]
-        },
-        "ImmunityNeedId": {
-            "type": "string",
-            "examples": [
-                "WetFur"
-            ]
-        }
-    },
-    "examples": [{
-        "NeedId": "Overheat",
-        "PointsPerHourOutsideDay":
-            -0.25,
-        "PointsPerHourOutsideNight":
-            -0.1,
-        "PointsPerHourInsideDay":
-            -0.025,
-        "PointsPerHourInsideNight": 0,
-        "ImmunityNeedId": "WetFur"
-    }]
-}
-```
-
 # NeedAffectedBySoakedness
 ```json
 {
@@ -1224,7 +1168,58 @@ For examples of all existing specifications check out the [TimberAPI Example](ht
 }
 ```
 
-
+# WellbeingTier
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "CharacterType": {
+      "type": "string"
+    },
+    "BonusId": {
+      "type": "string"
+    },
+    "Bonuses": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "Wellbeing": {
+              "type": "integer"
+            },
+            "Multiplier": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "Wellbeing",
+            "Multiplier"
+          ]
+        }
+      ]
+    },
+    "WellbeingThreshold": {
+      "type": "integer"
+    },
+    "MultiplierIncrement": {
+      "type": "number"
+    }
+  },
+  "examples": [{
+    "CharacterType": "BeaverAdult",
+	"BonusId": "LifeExpectancy",
+	"Bonuses": [
+    {
+      "Wellbeing": 7,
+      "Multiplier": 0.2
+    }],
+  "WellbeingThreshold": 10,
+  "MultiplierIncrement": 0.1
+  }]
+}
+```
 
 
 
