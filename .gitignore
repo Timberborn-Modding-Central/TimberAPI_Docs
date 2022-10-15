@@ -4,3 +4,12 @@ _site
 .sass-cache
 Gemfile.lock
 .DS_Store
+/.vs/VSWorkspaceState.json
+/.vs/TimberAPI_Docs/v17/.suo
+/.vs/TimberAPI_Docs/v17
+/.vs/TimberAPI_Docs/FileContentIndex/read.lock
+/.vs/TimberAPI_Docs/FileContentIndex/c8da0480-30de-4d70-bd81-f1c7b26c9362.vsidx
+/.vs/TimberAPI_Docs/FileContentIndex/296830f1-7fea-4b8d-83ef-19f66ad3bcf6.vsidx
+/.vs/TimberAPI_Docs/FileContentIndex
+/.vs/TimberAPI_Docs/config/applicationhost.config
+/.vs/slnx.sqlite
