@@ -90,10 +90,7 @@ A list of known free decompilers:
 - [ILSpy](https://github.com/icsharpcode/ILSpy)
 - [Jetbrains dotPeek](https://www.jetbrains.com/decompiler/)
 
-## Example Plugin
-While developing TimberAPI we created a [Example mod](https://github.com/Timberborn-Modding-Central/TimberAPI/tree/main/TimberAPIExample) to showcase how to use various TimberAPI functionalities.
-Whenever you get stuck on a problem try to look into the example mod for some quick tips.  
-  
+## Examples
 It's also helpful to look at existing mods. Most modders publish their source code online and can be found on [ThunderStore](https://timberborn.thunderstore.io/)
 ![](/assets/images/source_link.png)
 

@@ -62,6 +62,7 @@ public class Bar {
 
 ```csharp
 // ExampleConfigurator.cs
+[Configurator(SceneEntrypoint.InGame)]
 public class ExampleConfigurator : IConfigurator {
     public void Configure(IContainerDefinition containerDefinition) {
         containerDefinition.Bind<Foo>().AsSingleton();
