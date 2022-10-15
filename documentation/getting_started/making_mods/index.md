@@ -70,7 +70,17 @@ To bind your custom classes to Timberborn's dependency container create a class 
 the classes. The Configurator class will laso need an `[Configurator]` attribute, so TimberAPI knows where the Configurator is used. See [Dependency injection](/../dependency_injection/)
 
 If you need Patches in your mod, then you need to create a class that inherits the `IModEntrypoint` interface. Create a `Entry(IMod mod, IConsoleWriter consoleWriter)` method 
-for the class and call Harmony inside it.
+for the class and call Harmony inside it. For example
+```csharp
+public class MyModEntry : IModEntrypoint
+{
+    public void Entry(IMod mod, IConsoleWriter consoleWriter)
+    {
+        var harmony = new Harmony("my.harmony.id");
+        harmony.PatchAll();
+    }
+}
+```
 
 ## Decompiling Timberborn
 The NuGet package `Timberborn.GameLib` you installed earlier allows you to see the general structure of the game. 
