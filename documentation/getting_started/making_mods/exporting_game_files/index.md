@@ -1,6 +1,6 @@
 ﻿---
 title: Exporting Game Files
-permalink: /making_mods/asset_ripper/
+permalink: /making_mods/exporting_game_files/
 nav_order: 0
 layout: page
 has_toc: true
