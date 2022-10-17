@@ -23,7 +23,7 @@
 1. Start Unity Editor.
     - it may crash or freeze with so many files to import then force close the editor.  
 1. Open Thunderkit settings.  
-![Thunderkit](/assets/images/assetripper/thunderKit.png)  
+![Thunderkit](/assets/images/assetripper/thunderkit.png)  
 1. Open tab ThunderKit Settings and press Import.  
-![Thunderkit](/assets/images/assetripper/thunderKit_import.png)  
+![Thunderkit](/assets/images/assetripper/thunderkit_import.png)  
 1. Find model you want to check.
