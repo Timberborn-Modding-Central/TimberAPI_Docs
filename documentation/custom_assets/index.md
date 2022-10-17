@@ -39,7 +39,7 @@ This registers the assets with the given prefix. The assets are loaded in the gi
 *SceneEntryPoints: `InGame`, `MainMenu`, `MapEditor`, `All` 
 
 ## Using custom assets
-The assets can be used in the game from eitehr specifications or straight from code.
+The assets can be used in the game from either specifications or straight from code.
 
 ### From specifications
 Some specifications have elements that use assets as their values. You can use your assets in those by using syntax `<MyPrefix>/<MyBundleName>/<MyAssetName>`
