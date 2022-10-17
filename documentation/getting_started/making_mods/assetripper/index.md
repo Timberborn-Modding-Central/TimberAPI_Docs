@@ -1,4 +1,21 @@
-# Requirements:
+---
+title: Asset Ripper
+permalink: /making_mods/asset_ripper/
+nav_order: 0
+layout: page
+has_toc: true
+parent: Making Mods
+---
+# Asset Ripper
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+## Prerequisites
 - Installed Unity Editor
 - Downloaded GUI version from: https://github.com/AssetRipper/AssetRipper/releases  
     **Known working version: 0.2.1.1**
@@ -6,9 +23,7 @@
     -   Note it will replace/remove all files in the folder!
 - Separate Unity project for AssetRipper.    
 
-
-
-# Workflow:  
+## Instruction:  
 1. Open Asset ripper  
 1. Change Setting of Script Export format to DLL Export without Renaming.  
 ![Asset Ripper](/assets/images/assetripper/assetripper.png)
