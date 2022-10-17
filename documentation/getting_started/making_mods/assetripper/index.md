@@ -1,4 +1,4 @@
----
+﻿---
 title: Asset Ripper
 permalink: /making_mods/asset_ripper/
 nav_order: 0
