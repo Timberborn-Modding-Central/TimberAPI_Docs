@@ -1,12 +1,12 @@
 ﻿---
-title: Asset Ripper
+title: Exporting Game Files
 permalink: /making_mods/asset_ripper/
 nav_order: 0
 layout: page
 has_toc: true
 parent: Making Mods
 ---
-# Asset Ripper
+# Exporting Game Files
 {: .no_toc }
 
 ## Table of contents
@@ -17,7 +17,7 @@ parent: Making Mods
 
 ## Prerequisites
 - Installed Unity Editor
-- Downloaded GUI version from: https://github.com/AssetRipper/AssetRipper/releases  
+- Downloaded GUI version from: [https://github.com/AssetRipper/AssetRipper/releases](https://github.com/AssetRipper/AssetRipper/releases)   
     **Known working version: 0.2.1.1**
 - Folder where it can Export files to.
     -   Note it will replace/remove all files in the folder!
@@ -25,7 +25,7 @@ parent: Making Mods
 
 ## Instruction:  
 1. Open Asset ripper  
-1. Change Setting of Script Export format to DLL Export without Renaming.  
+1. Change Setting of Script Export format to **DLL Export without Renaming.**  
 ![Asset Ripper](/assets/images/assetripper/assetripper.png)
 1. Select Open File and Select Timberborn.exe   
 ![Open File](/assets/images/assetripper/open_file.png)
@@ -34,6 +34,7 @@ parent: Making Mods
 1. Open Exported files when export is done.  
 1. go to /Timberborn/ExportedProject and Rename Asset folder to Timberborn.  
 1. Open renamed folder and Select MonoScript folder and delete it.
+    - Can stop here if you just want to look at text files.  
 1. Copy Renamed folder to Unity Projects Asset folder. 
 1. Start Unity Editor.
     - it may crash or freeze with so many files to import then force close the editor.  
