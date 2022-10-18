@@ -73,9 +73,10 @@ As you can see you only have to place the keys in you want to change.
 **Note:** When the specification has an array with object you CANNOT merge these values, it will add a new object inside the array. 
 Results differ depending on the specification.
 
-### Overwriting existing arrays (.replace, NOT YET IMPLEMENTED)
+### Overwriting existing arrays (.replace)
 
 Sometimes you want to completely replace the original array, this can be done by ending the filename with `.replace`.
+For example `GoodSpecification.Berries.replace.json`
 ```json
 {
   "ConsumptionEffects": [
@@ -91,7 +92,7 @@ When you load the game the `Food` consumption effect will be removed and replace
 ### Creating new items (.original)
 When you want to create a new faction, good, need or custom specification item you need to end the filename with `.original`.  
 The `.original` lets the specification system know that it is the original specification that needs to be overwritten.  
-For all Timberborns specification jsons see: [Timberborn specification schemas](/specifications/schemas), if you want more examples you need to decompile the assets.
+For all Timberborns specification jsons see: [Timberborn specification schemas](/specifications/schemas), if you want more examples you need to [decompile the assets](/making_mods/exporting_game_files/).
 
 Example:
 ```json
