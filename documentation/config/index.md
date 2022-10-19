@@ -31,12 +31,21 @@ For example
 public string ConfigFileName => "Filename";
 ```
 
-Then you can add your configs as public fields.
+Then you can add your configs as public properties.
 For example
 ```csharp
-public string Foo1 = "value1";
+public string Foo1 {get; set;}
 
-public int Foo2 = 2;
+public int Foo2 {get; set;}
+```
+
+Set the default values in a constructor
+```csharp
+public TestConfig()
+{
+    Foo1 = "value1";
+    Foo2 = 123;
+}
 ```
 
 To get a reference to the config call the `IMod.Configs.Get<>()` method.
@@ -65,9 +74,15 @@ public class TestConfig : IConfig
 {
     public string ConfigFileName => "Filename";
 
-    public string Foo1 = "value1";
+    public string Foo1 {get; set;}
 
-    public int Foo2 = 2;
+    public int Foo2 {get; set;}
+
+    public TestConfig()
+    {
+        Foo1 = "value1";
+        Foo2 = 123;
+    }
 }
 
 public class FooMod: IModEntryPoint
