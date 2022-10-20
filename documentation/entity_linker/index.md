@@ -1,7 +1,7 @@
 ---
 title: Other Features
-permalink: /timberapi/
-nav_order: 400
+permalink: /entity_linkers/
+nav_order: 500
 layout: page
 has_toc: false
 has_children: true

@@ -1,7 +1,7 @@
 ---
 title: Config
 permalink: /config/
-nav_order: 600
+nav_order: 200
 layout: page
 has_toc: false
 ---
