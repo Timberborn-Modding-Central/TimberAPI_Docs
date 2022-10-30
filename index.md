@@ -18,7 +18,7 @@ Unofficial API to enable easier Timberborn modding
 1. [Configuration files](/config/) for easy alteration of the mods behaviour
 
 ## Provided Sample Plugin with API examples
-**[Example Plugin](https://github.com/Timberborn-Modding-Central/TimberAPI/blob/main/TimberAPIExample/TimberApiExamplePlugin.cs)**
+**[Example Plugin](https://github.com/Timberborn-Modding-Central/TimberAPI/tree/main/Examples)**
 
 ## Contributors
 
