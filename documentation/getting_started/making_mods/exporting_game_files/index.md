@@ -1,4 +1,4 @@
-﻿---
+---
 title: Exporting Game Files
 permalink: /making_mods/exporting_game_files/
 nav_order: 0
@@ -18,10 +18,12 @@ parent: Making Mods
 ## Prerequisites
 - Installed Unity Editor
 - Downloaded GUI version from: [https://github.com/AssetRipper/AssetRipper/releases](https://github.com/AssetRipper/AssetRipper/releases)   
-    **Known working version: 0.2.1.1**
+    **Known working version: 0.3.0.2**
 - Folder where it can Export files to.
     -   Note it will replace/remove all files in the folder!
-- Separate Unity project for AssetRipper.    
+- Separate Unity project for AssetRipper.
+    - Installed Thunderkit in above Project [Thunderkit installation](https://youtu.be/AKV8TchzX0s)   
+    - In UnityHub press ... and add this command line "-disable-assembly-updater"
 
 ## Instruction:  
 1. Open Asset ripper  
@@ -33,9 +35,10 @@ parent: Making Mods
 ![Export Files](/assets/images/assetripper/export_all.png)
 1. Open Exported files when export is done.  
 1. go to /Timberborn/ExportedProject and Rename Asset folder to Timberborn.  
-1. Open renamed folder and Select MonoScript folder and delete it.
+1. Open renamed folder and Select "Plugins" folder and delete it.
     - Can stop here if you just want to look at text files.  
 1. Copy Renamed folder to Unity Projects Asset folder. 
+
 1. Start Unity Editor.
     - it may crash or freeze with so many files to import then force close the editor.  
 1. Open Thunderkit settings.  
