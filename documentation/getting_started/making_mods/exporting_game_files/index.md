@@ -17,7 +17,7 @@ parent: Making Mods
 
 ## Prerequisites
 - Installed Unity Editor
-- Downloaded GUI version from: [https://github.com/AssetRipper/AssetRipper/releases](https://github.com/AssetRipper/AssetRipper/releases)   
+- Downloaded Assetripper from: [https://github.com/AssetRipper/AssetRipper/releases](https://github.com/AssetRipper/AssetRipper/releases)   
     **Known working version: 0.3.0.2**
 - Folder where it can Export files to.
     -   Note it will replace/remove all files in the folder!
