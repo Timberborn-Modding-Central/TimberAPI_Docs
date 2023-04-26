@@ -41,7 +41,7 @@ All current mods for Timberborn use the framework [BepInEx](https://docs.bepinex
    example: `"/Users/<User>/Library/Application Support/Steam/steamapps/common/Timberborn/run_bepinex.sh" %command%`
 
 # Installing mods
-1. Download mods at [ThunderStore](https://timberborn.thunderstore.io/package/)
+1. Download mods at [Mod.io](https://mod.io/g/timberborn)
 2. Locate to `~/Library/Application Support/Steam/steamapps/common/Timberborn/BepInEx/plugins`
 3. \*Create a folder for each mod you downloaded (If the mod hasn't have one)
 4. Move all files inside the downloaded mod to the newly created folder.  
