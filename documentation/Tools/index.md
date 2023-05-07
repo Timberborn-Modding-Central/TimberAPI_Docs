@@ -24,7 +24,7 @@ For example placing buildings or prioritizing builders.
 |-------------------|---------|-----------|-----------------------------------------------------------------------------|
 | Id                | -       | Yes       | Unique identifier                                                           |
 | GroupId           | -       | No        | Group unique identifier                                                     |
-| Type              | -       | Yes       | Defines what tool will be created                                           |
+| Type              | -       | Yes       | Defines what tool will be created, check out [TimberApi Tools](https://github.com/Timberborn-Modding-Central/TimberAPI/tree/main/Core/TimberApi/ToolSystem/Tools) to find the identifiers or check out the mod creator |
 | Layout            | Brown   | No        | Defines what button layout will be created                                  |
 | Order             | -       | Yes       | Position of ToolButton                                                      |
 | Icon              | -       | Yes       | Asset path to sprite                                                        |
@@ -47,7 +47,7 @@ For example placing buildings or prioritizing builders.
     "NameLocKey": "Building.Ruins.DisplayName",
     "DescriptionLocKey": "Building.Ruins.Description",
     "DevMode": true,
-    "Hidden": false
+    "Hidden": false,
     "ToolInformation": {
         "BuildingPrefabName": "RuinColumnH8",
         "BottomBarSection": 1

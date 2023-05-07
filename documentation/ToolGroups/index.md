@@ -19,19 +19,19 @@ ToolGroups are used to group multiple Tools together.
 
 ## ToolGroupSpecification Scheme
 
-| Property         | Default   | Required  | Description                                                                |
-|------------------|-----------|-----------|----------------------------------------------------------------------------|
-| Id               | -         | Yes       | Unique identifier                                                          |
-| GroupId          | -         | No        | Group unique identifier                                                    |
-| Type             | -         | Yes       | Defines what tool will be created                                          |
-| Section          | BottomBar | No        | Location indicator                                                         |
-| Layout           | Green     | No        | Defines what button layout will be created                                 |
-| Order            | -         | Yes       | Position of ToolButton                                                     |
-| Icon             | -         | Yes       | Asset path to sprite                                                       |
-| NameLocKey       | -         | Yes       | Localization key                                                           |
-| DevMode          | false     | No        | Required dev mode when true                                                |
-| Hidden           | false     | No        | Hides existing tool when true                                              |
-| GroupInformation | -         | Sometimes | Implementation defined data, check out the mod creator for this information |
+| Property         | Default   | Required  | Description                                                                                                                                                                                                                 |
+|------------------|-----------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Id               | -         | Yes       | Unique identifier                                                                                                                                                                                                           |
+| GroupId          | -         | No        | Group unique identifier                                                                                                                                                                                                     |
+| Type             | -         | Yes       | Defines what tool will be created, check out [TimberApi ToolGroups](https://github.com/Timberborn-Modding-Central/TimberAPI/tree/main/Core/TimberApi/ToolGroupSystem/ToolGroups) to find the identifiers or check out the mod creator |
+| Section          | BottomBar | No        | Location indicator                                                                                                                                                                                                          |
+| Layout           | Green     | No        | Defines what button layout will be created                                                                                                                                                                                  |
+| Order            | -         | Yes       | Position of ToolButton                                                                                                                                                                                                      |
+| Icon             | -         | Yes       | Asset path to sprite                                                                                                                                                                                                        |
+| NameLocKey       | -         | Yes       | Localization key                                                                                                                                                                                                            |
+| DevMode          | false     | No        | Required dev mode when true                                                                                                                                                                                                 |
+| Hidden           | false     | No        | Hides existing tool when true                                                                                                                                                                                               |
+| GroupInformation | -         | Sometimes | Implementation defined data, check out the mod creator for this information                                                                                                                                                 |
 
 ### Example
 {: .no_toc }
