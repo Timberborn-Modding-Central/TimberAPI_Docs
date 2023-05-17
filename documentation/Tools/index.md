@@ -20,19 +20,19 @@ For example placing buildings or prioritizing builders.
 
 ## ToolSpecification Scheme
 
-| Property          | Default | Required  | Description                                                                 |
-|-------------------|---------|-----------|-----------------------------------------------------------------------------|
-| Id                | -       | Yes       | Unique identifier                                                           |
-| GroupId           | -       | No        | Group unique identifier                                                     |
+| Property          | Default | Required  | Description                                                                                                          |
+|-------------------|---------|-----------|----------------------------------------------------------------------------------------------------------------------|
+| Id                | -       | Yes       | Unique identifier                                                                                                    |
+| GroupId           | -       | No        | Group unique identifier                                                                                              |
 | Type              | -       | Yes       | Defines what tool will be created, check out [TimberApi Tools](https://github.com/Timberborn-Modding-Central/TimberAPI/tree/main/Core/TimberApi/ToolSystem/Tools) to find the identifiers or check out the mod creator |
-| Layout            | Brown   | No        | Defines what button layout will be created                                  |
-| Order             | -       | Yes       | Position of ToolButton                                                      |
-| Icon              | -       | Yes       | Asset path to sprite                                                        |
-| NameLocKey        | -       | Yes       | Localization key                                                            |
-| DescriptionLocKey | -       | Yes       | Localization key                                                            |
-| DevMode           | false   | No        | Required dev mode when true                                                 |
-| Hidden            | false   | No        | Hides existing tool when true                                               |
-| ToolInformation   | -       | Sometimes | Implementation defined data, check out the mod creator for this information |
+| Layout            | Brown   | No        | Defines what button layout will be created                                                                           |
+| Order             | -       | Yes       | Position of ToolButton                                                                                               |
+| Icon              | -       | Yes       | Asset path to sprite                                                                                                 |
+| NameLocKey        | -       | Yes       | Localization key                                                                                                     |
+| DescriptionLocKey | -       | Yes       | Localization key. Even though it's required, it will _not_ be used "out of the box". Your code must take care of it. |
+| DevMode           | false   | No        | Required dev mode when true                                                                                          |
+| Hidden            | false   | No        | Hides existing tool when true                                                                                        |
+| ToolInformation   | -       | Sometimes | Implementation defined data, check out the mod creator for this information                                          |
 
 ### Example
 {: .no_toc }
@@ -67,6 +67,21 @@ When creating a Tool the original method of Timberborn does not work! Follow the
 ### Example
 {: .no_toc }
 ```csharp
+public class CancelPlantingTool : Tool
+{
+    public CancelPlantingTool(ToolGroup toolGroup)
+    {
+        ToolGroup = toolGroup;
+    }
+
+    public override ToolDescription Description()
+    {
+        // Here you make the actual tooltip. Return `null` if you don't want a tooltip.
+        return new ToolDescription.Builder().Build();
+    }
+}
+```
+```csharp
 public class CancelPlantingToolFactory : IToolFactory
 {
    ...
@@ -75,7 +90,8 @@ public class CancelPlantingToolFactory : IToolFactory
 
     public Tool Create(ToolSpecification toolSpecification, ToolGroup? toolGroup = null)
     {
-        return new CancelPlantingTool(_plantingSelectionService, toolGroup);
+        // Handle `toolSpecification` eher or pass it down to the tool.
+        return new CancelPlantingTool(toolGroup);
     }
 }
 ```
