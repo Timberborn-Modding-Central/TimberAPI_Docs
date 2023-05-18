@@ -66,6 +66,11 @@ When creating a Tool the original method of Timberborn does not work! Follow the
 
 ### Example
 {: .no_toc }
+
+The specialized class `PlantingModeToolGroup` is reqired because a special behavior is needed on the tool selection. It's done by
+implementing `IPlantingToolGroup`. If it was a trivial case, it would be enough to provide an instance of plain `ApiToolGroup` from
+the factory.
+
 ```csharp
 public class PlantingModeToolGroup : ApiToolGroup, IPlantingToolGroup
 {
