@@ -29,9 +29,13 @@ ToolGroups are used to group multiple Tools together.
 | Order            | -         | Yes       | Position of ToolButton                                                                                                                                                                                                      |
 | Icon             | -         | Yes       | Asset path to sprite                                                                                                                                                                                                        |
 | NameLocKey       | -         | Yes       | Localization key                                                                                                                                                                                                            |
+| FallbackGroup    | -         | Yes       | Always set it to "false"                                                                                                                                                                                                    |
 | DevMode          | false     | No        | Required dev mode when true                                                                                                                                                                                                 |
 | Hidden           | false     | No        | Hides existing tool when true                                                                                                                                                                                               |
 | GroupInformation | -         | Sometimes | Implementation defined data, check out the mod creator for this information                                                                                                                                                 |
+
+_NOTE:_ The specification must be stored in a file with the specific name to be recognized properly. E.g. the file name can be `ToolGroupSpecification.foo.bar.original.json`, where prefix `ToolGroupSpecification`, suffix `original`, and extension `json`
+are **required**. You can put arbitrary text between _prefix_ and _suffix_. See more in [specification naming](../specifications/index.md#specification-naming).
 
 ### Example
 {: .no_toc }
@@ -62,6 +66,11 @@ When creating a Tool the original method of Timberborn does not work! Follow the
 
 ### Example
 {: .no_toc }
+
+The specialized class `PlantingModeToolGroup` is reqired because a special behavior is needed on the tool selection. It's done by
+implementing `IPlantingToolGroup`. If it was a trivial case, it would be enough to provide an instance of plain `ApiToolGroup` from
+the factory.
+
 ```csharp
 public class PlantingModeToolGroup : ApiToolGroup, IPlantingToolGroup
 {

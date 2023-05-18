@@ -19,7 +19,22 @@ Specifications have a large range of usage. For example, you can make new or edi
 Factions, Goods, Needs, Recipes and more. The specifications are automatically loaded within the specification folder relative to your mod location.
 You can place any sub folder inside the specification folder, all sub folders will be ignored.
 
-## Specification usage
+The name of the specification definition file tells how the specifiaction must be handled and applied. The format is the following:
+
+```backus-naur-form
+<filename> ::= <specification-type> "Specification." <item-name> <opt-behavior> ".json"
+<opt-behavior> ::= "replace." | "original." | ""
+```
+
+where:
+* `<specification-type>` is one of the types described in [timberborn schemas](../specifications/schemas.md).
+* `<opt-behavior>` indicates how the specification should be applied:
+  * By default, the file content will be merged with the existing specifcation. The array fields will be expanded. If there is no specification exist already, then no changes will be made.
+  * `replace` is a variation of the default behavior, but teh array fields will be complete replaced instead of expanding with new values.
+  * `original` indicates that it's a completely new specification that will become available for others to overwrite.
+* `<item-name>` addresses a specific definition within the type. E.g. for type `Good` it's the name of the specifc good being overwritten.
+
+## Specification usage example
 In the following sections we will show you examples how you can use the specification system. 
 For all examples we are using the good specification of berries.
 
@@ -52,11 +67,10 @@ For all examples we are using the good specification of berries.
 ## Specification naming
 In this section we are going to look how the file naming is setup for `GoodSpecification.Berries.json`  
 Let's split this up:
-- `Good` Specification type
-- `Specification` Specifies that it is a specification
-- `.Berries` The name of the good
-- `.json` File extension
-
+- `Good` Specification type (`<specification-type>`).
+- `Specification.` Indicates that it is a specification.
+- `Berries` The name of the good (`<item-name>`).
+- `.json` File extension.
 
 ### overwrite Timberborn or custom specifications
 The default behaviour is to merge any original specification with the same name.  
