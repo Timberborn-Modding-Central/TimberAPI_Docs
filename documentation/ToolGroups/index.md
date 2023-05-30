@@ -29,6 +29,7 @@ ToolGroups are used to group multiple Tools together.
 | Order            | -         | Yes       | Position of ToolButton                                                                                                                                                                                                      |
 | Icon             | -         | Yes       | Asset path to sprite                                                                                                                                                                                                        |
 | NameLocKey       | -         | Yes       | Localization key                                                                                                                                                                                                            |
+| FallbackGroup    | false     | Yes       | Determines whether this group is the fallback group. This is provided by the game so should always be false                                                                                          |
 | DevMode          | false     | No        | Required dev mode when true                                                                                                                                                                                                 |
 | Hidden           | false     | No        | Hides existing tool when true                                                                                                                                                                                               |
 | GroupInformation | -         | Sometimes | Implementation defined data, check out the mod creator for this information                                                                                                                                                 |
@@ -44,6 +45,7 @@ ToolGroups are used to group multiple Tools together.
   "Order": "180",
   "NameLocKey": "ToolGroups.Other",
   "Icon": "Sprites/BottomBar/BuildingGroups/Other",
+  "FallbackGroup": false,
   "DevMode": true,
   "Hidden": true,
   "GroupInformation": {
