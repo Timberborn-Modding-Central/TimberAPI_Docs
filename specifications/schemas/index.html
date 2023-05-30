@@ -1,0 +1,1156 @@
+<!DOCTYPE html> <html lang="en-US"> <head> <meta charset="UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=Edge"> <link rel="stylesheet" href="/assets/css/just-the-docs-default.css"> <script src="/assets/js/vendor/lunr.min.js"></script> <script src="/assets/js/just-the-docs.js"></script> <meta name="viewport" content="width=device-width, initial-scale=1"> <link rel="icon" href="/favicon.ico" type="image/x-icon"> <!-- Begin Jekyll SEO tag v2.8.0 --> <title>Timberborn schemas | TimberAPI</title> <meta name="generator" content="Jekyll v3.9.3" /> <meta property="og:title" content="Timberborn schemas" /> <meta property="og:locale" content="en_US" /> <meta name="description" content="Upcoming API to enable easier Timberborn modding" /> <meta property="og:description" content="Upcoming API to enable easier Timberborn modding" /> <link rel="canonical" href="https://timberapi.com/specifications/schemas/" /> <meta property="og:url" content="https://timberapi.com/specifications/schemas/" /> <meta property="og:site_name" content="TimberAPI" /> <meta property="og:type" content="website" /> <meta name="twitter:card" content="summary" /> <meta property="twitter:title" content="Timberborn schemas" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-05-30T21:40:52+00:00","description":"Upcoming API to enable easier Timberborn modding","headline":"Timberborn schemas","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://gcdn.thunderstore.io/live/repository/icons/Timberborn_Central-TimberAPI-0.3.2.png.128x128_q95.jpg"}},"url":"https://timberapi.com/specifications/schemas/"}</script> <!-- End Jekyll SEO tag --> </head> <body> <a class="skip-to-main" href="#main-content">Skip to main content</a> <svg xmlns="http://www.w3.org/2000/svg" class="d-none"> <symbol id="svg-link" viewBox="0 0 24 24"> <title>Link</title> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"> <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path> </svg> </symbol> <symbol id="svg-menu" viewBox="0 0 24 24"> <title>Menu</title> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"> <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line> </svg> </symbol> <symbol id="svg-arrow-right" viewBox="0 0 24 24"> <title>Expand</title> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"> <polyline points="9 18 15 12 9 6"></polyline> </svg> </symbol> <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE --> <symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"> <title id="svg-external-link-title">(external link)</title> <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line> </symbol> <symbol id="svg-doc" viewBox="0 0 24 24"> <title>Document</title> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"> <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline> </svg> </symbol> <symbol id="svg-search" viewBox="0 0 24 24"> <title>Search</title> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"> <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line> </svg> </symbol> <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md --> <symbol id="svg-copy" viewBox="0 0 16 16"> <title>Copy</title> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg> </symbol> <symbol id="svg-copied" viewBox="0 0 16 16"> <title>Copied</title> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"> <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg> </symbol> </svg> <div class="side-bar"> <div class="site-header"> <a href="/" class="site-title lh-tight"> <div class="site-logo"></div> TimberAPI </a> <a href="#" id="menu-button" class="site-button"> <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg> </a> </div> <nav aria-label="Main" id="site-nav" class="site-nav"> <ul class="nav-list"><li class="nav-list-item"><a href="https://timberapi.com/" class="nav-list-link">Home</a></li><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://timberapi.com/using_mods/" class="nav-list-link">Using Mods</a><ul class="nav-list "><li class="nav-list-item "><a href="https://timberapi.com/using_mods/manual_install/" class="nav-list-link">Manual Install</a></li></ul></li><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://timberapi.com/making_mods/" class="nav-list-link">Making Mods</a><ul class="nav-list "><li class="nav-list-item "><a href="https://timberapi.com/making_mods/mod_json/" class="nav-list-link">mod.json schema</a></li><li class="nav-list-item "><a href="https://timberapi.com/making_mods/exporting_game_files/" class="nav-list-link">Exporting Game Files</a></li></ul></li><hr class="mt-1 mb-4" /><li class="nav-list-item"><a href="https://timberapi.com/dependency_injection/" class="nav-list-link">Dependency Injection</a></li><li class="nav-list-item"><a href="https://timberapi.com/config/" class="nav-list-link">Config</a></li><li class="nav-list-item active"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://timberapi.com/specifications/" class="nav-list-link">Specifications</a><ul class="nav-list "><li class="nav-list-item active"><a href="https://timberapi.com/specifications/schemas/" class="nav-list-link active">Timberborn schemas</a></li></ul></li><li class="nav-list-item"><a href="https://timberapi.com/bottom_bar/" class="nav-list-link">Bottom Bar</a></li><li class="nav-list-item"><a href="https://timberapi.com/tools/" class="nav-list-link">Tools</a></li><li class="nav-list-item"><a href="https://timberapi.com/tool_groups/" class="nav-list-link">ToolGroups</a></li><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://timberapi.com/custom_assets/" class="nav-list-link">Custom Assets</a><ul class="nav-list "><li class="nav-list-item "><a href="https://timberapi.com/custom_assets/create" class="nav-list-link">Create Custom Assets</a></li><li class="nav-list-item "><a href="https://timberapi.com/custom_assets/animation" class="nav-list-link">Animating objects</a></li></ul></li><li class="nav-list-item"><a href="https://timberapi.com/entity_linkers/" class="nav-list-link">Entity Linker</a></li></ul> </nav> <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll. </footer> </div> <div class="main" id="top"> <div id="main-header" class="main-header"> <div class="search"> <div class="search-input-wrap"> <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search TimberAPI" aria-label="Search TimberAPI" autocomplete="off"> <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label> </div> <div id="search-results" class="search-results"></div> </div> <nav aria-label="Auxiliary" class="aux-nav"> <ul class="aux-nav-list"> <li class="aux-nav-list-item"> <a href="//github.com/Timberborn-Modding-Central/TimberAPI" class="site-button" > TimberAPI on GitHub </a> </li> </ul> </nav> </div> <div id="main-content-wrap" class="main-content-wrap"> <nav aria-label="Breadcrumb" class="breadcrumb-nav"> <ol class="breadcrumb-nav-list"> <li class="breadcrumb-nav-list-item"><a href="/specifications/">Specifications</a></li> <li class="breadcrumb-nav-list-item"><span>Timberborn schemas</span></li> </ol> </nav> <div id="main-content" class="main-content" role="main"> <p class="text-delta">Last updated: May 30, 2023 21:40:52</p> <h1 class="no_toc" id="timberborn-schemas"> <a href="#timberborn-schemas" class="anchor-heading" aria-labelledby="timberborn-schemas"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Timberborn schemas </h1> <p>Here can you find all Timberborns specification schemas, this will help you how to overwrite or create specifications. For examples of all existing specifications check out the <a href="https://github.com/Timberborn-Modding-Central/TimberAPI/tree/main/TimberAPIExample/ExampleAssets/Specifications/v0.2.1.0">TimberAPI Example</a>. Or decompile the assets from Timberborn.</p> <h2 class="no_toc text-delta" id="table-of-contents"> <a href="#table-of-contents" class="anchor-heading" aria-labelledby="table-of-contents"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Table of contents </h2> <ol id="markdown-toc"> <li><a href="#bonustype" id="markdown-toc-bonustype">BonusType</a></li> <li><a href="#good" id="markdown-toc-good">Good</a></li> <li><a href="#needgroup" id="markdown-toc-needgroup">NeedGroup</a></li> <li><a href="#need" id="markdown-toc-need">Need</a></li> <li><a href="#needaffectedbysoakedness" id="markdown-toc-needaffectedbysoakedness">NeedAffectedBySoakedness</a></li> <li><a href="#needaffectingwork" id="markdown-toc-needaffectingwork">NeedAffectingWork</a></li> <li><a href="#recipe" id="markdown-toc-recipe">Recipe</a></li> <li><a href="#topbar" id="markdown-toc-topbar">TopBar</a></li> <li><a href="#workertype" id="markdown-toc-workertype">WorkerType</a></li> <li><a href="#faction" id="markdown-toc-faction">Faction</a></li> <li><a href="#wellbeingtier" id="markdown-toc-wellbeingtier">WellbeingTier</a></li> </ol> <h1 id="bonustype"> <a href="#bonustype" class="anchor-heading" aria-labelledby="bonustype"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> BonusType </h1> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Fertility"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"LocKey"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Bonus.Fertility"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fertility"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"LocKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bonus.Fertility"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <h1 id="good"> <a href="#good" class="anchor-heading" aria-labelledby="good"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Good </h1> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"GrilledSpadderdock"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"BackwardCompatibleIds"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"GrilledSpadderdockSeeds"</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"GrilledSpadderdockSeeds"</span><span class="p">]</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"DisplayNameLocKey"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Good.GrilledSpadderdock.DisplayName"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"PluralDisplayNameLocKey"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Good.GrilledSpadderdock.PluralDisplayName"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"ConsumptionEffects"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"NeedId"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="s2">"Food"</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"Points"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="mf">0.3</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                    </span><span class="nl">"NeedId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Food"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Points"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="w">
+                </span><span class="p">}]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">[{</span><span class="w">
+                    </span><span class="nl">"NeedId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Food"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Points"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"NeedId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GrilledSpadderdock"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Points"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="w">
+                </span><span class="p">}]</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"GoodType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Box"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"VisibleContainer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"Box"</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Box"</span><span class="w">
+            </span><span class="p">}]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"CarryingAnimation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"CarryInHands"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mi">1</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"TopBarGroupId"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Food"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Icon"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Sprites/Goods/GrilledSpadderdockIcon"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"RequiredFeatureToggle"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">""</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GrilledSpadderdock"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"BackwardCompatibleIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"GrilledSpadderdockSeeds"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"DisplayNameLocKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Good.GrilledSpadderdock.DisplayName"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"PluralDisplayNameLocKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Good.GrilledSpadderdock.PluralDisplayName"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ConsumptionEffects"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nl">"NeedId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Food"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Points"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"NeedId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GrilledSpadderdock"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Points"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="w">
+        </span><span class="p">}],</span><span class="w">
+        </span><span class="nl">"GoodType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Box"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"VisibleContainer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Box"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"CarryingAnimation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CarryInHands"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TopBarGroupId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Food"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sprites/Goods/GrilledSpadderdockIcon"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"RequiredFeatureToggle"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <h1 id="needgroup"> <a href="#needgroup" class="anchor-heading" aria-labelledby="needgroup"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> NeedGroup </h1> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Awe"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mi">70</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"DisplayNameLocKey"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"NeedGroup.Awe.DisplayName"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Awe"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Order"</span><span class="p">:</span><span class="w"> </span><span class="mi">70</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DisplayNameLocKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NeedGroup.Awe.DisplayName"</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <h1 id="need"> <a href="#need" class="anchor-heading" aria-labelledby="need"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Need </h1> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Books"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"BackwardCompatibleIds"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"Knowledge"</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"Knowledge"</span><span class="p">]</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mi">48</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"NeedGroupId"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Knowledge"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"CharacterType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"BeaverAdult"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"DisplayNameLocKey"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Good.Book.PluralDisplayName"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"StartingValue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mf">0.0</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"MinimumValue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mf">0.0</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"MaximumValue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mf">1.0</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"DailyDelta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mf">-0.1</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"ImportanceMultiplier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mf">1.0</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"CriticalNeedType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"None"</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="w">
+            </span><span class="p">}]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"CriticalSpriteName"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">""</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"CriticalDescriptionLocKey"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">""</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Bonuses"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="s2">"WorkingSpeed"</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"MultiplierDelta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="mf">0.2</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                    </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WorkingSpeed"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"MultiplierDelta"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="w">
+                </span><span class="p">}]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">[{</span><span class="w">
+                    </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WorkingSpeed"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"MultiplierDelta"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="w">
+                </span><span class="p">}]</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"DeathOnMinValue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="kc">false</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"DeathMessageLocKey"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">""</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Effectiveness"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mf">1.0</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Wastable"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="kc">false</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"PositiveWellbeing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mi">3</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Books"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"BackwardCompatibleIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"Knowledge"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"Order"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"NeedGroupId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Knowledge"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"CharacterType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BeaverAdult"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DisplayNameLocKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Good.Book.PluralDisplayName"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"StartingValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"MinimumValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"MaximumValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DailyDelta"</span><span class="p">:</span><span class="w">
+            </span><span class="mf">-0.1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ImportanceMultiplier"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"CriticalNeedType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"CriticalSpriteName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"CriticalDescriptionLocKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Bonuses"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WorkingSpeed"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"MultiplierDelta"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="w">
+        </span><span class="p">}],</span><span class="w">
+        </span><span class="nl">"DeathOnMinValue"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DeathMessageLocKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Effectiveness"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Wastable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"PositiveWellbeing"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <h1 id="needaffectedbysoakedness"> <a href="#needaffectedbysoakedness" class="anchor-heading" aria-labelledby="needaffectedbysoakedness"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> NeedAffectedBySoakedness </h1> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"NeedId"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"WaterCooling"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"PointsPerHour"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mi">6</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"NeedId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WaterCooling"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"PointsPerHour"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <h1 id="needaffectingwork"> <a href="#needaffectingwork" class="anchor-heading" aria-labelledby="needaffectingwork"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> NeedAffectingWork </h1> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"NeedId"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Biofuel"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"CriticalStatePreventsWork"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="kc">true</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"WorkRefusalWarningLocKey"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Work.WorkRefusalWarning"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"NeedId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Biofuel"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"CriticalStatePreventsWork"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"WorkRefusalWarningLocKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Work.WorkRefusalWarning"</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <h1 id="recipe"> <a href="#recipe" class="anchor-heading" aria-labelledby="recipe"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Recipe </h1> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Bread"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"DisplayLocKey"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Good.Bread.PluralDisplayName"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"CycleDurationInHours"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mf">0.42</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"CyclesCapacity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mi">38</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Ingredients"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"Good"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                    </span><span class="s2">"WheatFlour"</span><span class="w">
+                                </span><span class="p">]</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                            </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WheatFlour"</span><span class="w">
+                        </span><span class="p">}]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="mi">1</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                    </span><span class="nl">"Good"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WheatFlour"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">}]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">[{</span><span class="w">
+                    </span><span class="nl">"Good"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WheatFlour"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">}]</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Products"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"Good"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                    </span><span class="s2">"Bread"</span><span class="w">
+                                </span><span class="p">]</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                            </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bread"</span><span class="w">
+                        </span><span class="p">}]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="mi">5</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                    </span><span class="nl">"Good"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bread"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+                </span><span class="p">}]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">[{</span><span class="w">
+                    </span><span class="nl">"Good"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bread"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+                </span><span class="p">}]</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"ProducedSciencePoints"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mi">0</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Fuel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"Log"</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Log"</span><span class="w">
+            </span><span class="p">}]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"CyclesFuelLasts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mi">10</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"FuelCapacity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mi">5</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bread"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DisplayLocKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Good.Bread.PluralDisplayName"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"CycleDurationInHours"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.42</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"CyclesCapacity"</span><span class="p">:</span><span class="w"> </span><span class="mi">38</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Ingredients"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nl">"Good"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WheatFlour"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}],</span><span class="w">
+        </span><span class="nl">"Products"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nl">"Good"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bread"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+        </span><span class="p">}],</span><span class="w">
+        </span><span class="nl">"ProducedSciencePoints"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Fuel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Log"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"CyclesFuelLasts"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"FuelCapacity"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <h1 id="topbar"> <a href="#topbar" class="anchor-heading" aria-labelledby="topbar"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> TopBar </h1> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Food"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mi">2</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"DisplayNameLocKey"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"TopBar.Food"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Icon"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Sprites/TopBar/Food"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"SingleResourceGroup"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="kc">false</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Food"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Order"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DisplayNameLocKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TopBar.Food"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sprites/TopBar/Food"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"SingleResourceGroup"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <h1 id="workertype"> <a href="#workertype" class="anchor-heading" aria-labelledby="workertype"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> WorkerType </h1> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Beaver"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"DisplayNameLocKey"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Beaver.PluralDisplayName"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"WorkerOnlyTextLocKey"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Work.BeaverOnly"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"IgnoresWorkingHours"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="kc">false</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beaver"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DisplayNameLocKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beaver.PluralDisplayName"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"WorkerOnlyTextLocKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Work.BeaverOnly"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"IgnoresWorkingHours"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"BonusId"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"CuttingSuccessChance"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"GoodId"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Log"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"BonusId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CuttingSuccessChance"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"GoodId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Log"</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <h1 id="faction"> <a href="#faction" class="anchor-heading" aria-labelledby="faction"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Faction </h1> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Folktails"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">0</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"DisplayNameLocKey"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Faction.Folktails.DisplayName"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"DescriptionLocKey"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Faction.Folktails.Description"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Avatar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Sprites/Avatars/FolktailsAdult"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"ChildAvatar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Sprites/Avatars/FolktailsChild"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"GolemAvatar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Sprites/Avatars/FolktailsGolem"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Logo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Sprites/Avatars/FolktailsLogo"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"NewGameFullAvatar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Sprites/Avatars/FolktailsFullNewGame"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"NewGameHeadAvatar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Sprites/Avatars/FolktailsHeadNewGame"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Materials"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Materials/Beavers/Folktails/Adult/BeaverAdult1.Folktails"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Materials/Beavers/Folktails/Adult/BeaverAdult1.Folktails"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Materials/Beavers/Folktails/Adult/BeaverAdult2.Folktails"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"ChildMaterials"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Materials/Beavers/Folktails/Child/BeaverChild1.Folktails"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Materials/Beavers/Folktails/Child/BeaverChild1.Folktails"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Materials/Beavers/Folktails/Child/BeaverChild2.Folktails"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Materials/Beavers/Folktails/Child/BeaverChild3.Folktails"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"PrerequisiteFaction"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">""</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"AverageWellbeingToUnlock"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">0</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"CommonBuildings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Buildings/Decoration/BeaverStatue/BeaverStatue.Folktails"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Buildings/Decoration/BeaverStatue/BeaverStatue.Folktails"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Buildings/Decoration/Bench/Bench.Folktails"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Buildings/Decoration/LogFence/LogFence.Folktails"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"UniqueBuildings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Buildings/Decoration/Scarecrow/Scarecrow.Folktails"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Buildings/Decoration/Scarecrow/Scarecrow.Folktails"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Buildings/Decoration/WindGauge/WindGauge.Folktails"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Buildings/Food/Beehive/Beehive.Folktails"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Needs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"BeaverStatue"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"BeaverStatue"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"BeeSting"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Biofuel"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Goods"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Berries"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Berries"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Biofuel"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Book"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"NeedModifications"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[]</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"StartingBuildingId"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"DistrictCenter.Folktails"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Folktails"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"DisplayNameLocKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Faction.Folktails.DisplayName"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"DescriptionLocKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Faction.Folktails.Description"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sprites/Avatars/FolktailsAdult"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ChildAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sprites/Avatars/FolktailsChild"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"GolemAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sprites/Avatars/FolktailsGolem"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sprites/Avatars/FolktailsLogo"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"NewGameFullAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sprites/Avatars/FolktailsFullNewGame"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"NewGameHeadAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sprites/Avatars/FolktailsHeadNewGame"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Materials"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Materials/Beavers/Folktails/Adult/BeaverAdult1.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Materials/Beavers/Folktails/Adult/BeaverAdult2.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Materials/Beavers/Folktails/Adult/BeaverAdult3.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Materials/Beavers/Folktails/Adult/BeaverAdult4.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Materials/Beavers/Folktails/Adult/BeaverAdult5.Folktails"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"ChildMaterials"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Materials/Beavers/Folktails/Child/BeaverChild1.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Materials/Beavers/Folktails/Child/BeaverChild2.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Materials/Beavers/Folktails/Child/BeaverChild3.Folktails"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"PrerequisiteFaction"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"AverageWellbeingToUnlock"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"CommonBuildings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Buildings/Decoration/BeaverStatue/BeaverStatue.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Decoration/Bench/Bench.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Decoration/LogFence/LogFence.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Decoration/MetalFence/MetalFence.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Decoration/PlankFence/PlankFence.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Decoration/Roof1x1/Roof1x1.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Decoration/Roof1x2/Roof1x2.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Decoration/Roof2x2/Roof2x2.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Decoration/Roof2x3/Roof2x3.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Decoration/Roof3x2/Roof3x2.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Decoration/Shrub/Shrub.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Food/AquaticFarmhouse/AquaticFarmhouse.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Food/Bakery/Bakery.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Food/FarmHouse/FarmHouse.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Food/GathererFlag/GathererFlag.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Food/Grill/Grill.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Food/Gristmill/Gristmill.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Labor/BuildersHut/BuildersHut.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Labor/DistributionPost/DistributionPost.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Labor/DropOffPoint/DropOffPoint.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Labor/HaulingPost/HaulingPost.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Landscaping/Dam/Dam.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Landscaping/DoubleFloodgate/DoubleFloodgate.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Landscaping/Dynamite/Dynamite.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Landscaping/ExplosivesFactory/ExplosivesFactory.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Landscaping/Floodgate/Floodgate.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Landscaping/Levee/Levee.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Landscaping/TripleFloodgate/TripleFloodgate.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Wellbeing/Campfire/Campfire.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Wellbeing/Carousel/Carousel.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Wellbeing/Healer/Healer.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Wellbeing/Lido/Lido.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Wellbeing/MedicalBed/MedicalBed.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Wellbeing/MudBath/MudBath.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Wellbeing/RooftopTerrace/RooftopTerrace.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Wellbeing/Shower/Shower.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Wellbeing/Shrine/Shrine.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Wellbeing/TeethGrindstone/TeethGrindstone.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Wellbeing/Temple/Temple.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Metal/Mine/Mine.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Metal/ScavengerFlag/ScavengerFlag.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Metal/Smelter/Smelter.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Monuments/FlameOfProgress/FlameOfProgress.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Monuments/LaborerMonument/LaborerMonument.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Monuments/TributeToIngenuity/TributeToIngenuity.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Paths/DistrictCenter/DistrictCenter.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Paths/DistrictGate/DistrictGate.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Paths/DoublePlatform/DoublePlatform.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Paths/MetalPlatform/MetalPlatform.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Paths/Path/Path.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Paths/Platform/Platform.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Paths/SuspensionBridge1x1/SuspensionBridge1x1.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Paths/SuspensionBridge2x1/SuspensionBridge2x1.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Paths/SuspensionBridge3x1/SuspensionBridge3x1.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Paths/SuspensionBridge4x1/SuspensionBridge4x1.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Paths/SuspensionBridge5x1/SuspensionBridge5x1.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Paths/SuspensionBridge6x1/SuspensionBridge6x1.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Paths/TriplePlatform/TriplePlatform.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Paths/WoodenStairs/WoodenStairs.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Power/Crane/Crane.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Power/DevBattery/DevBattery"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Power/DevPowerGenerator/DevPowerGenerator"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Power/Flywheel/Flywheel.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Power/PowerShaftHigh/PowerShaftHigh.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Power/PowerShaftIntersection/PowerShaftIntersection.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Power/PowerShaftStraight/PowerShaftStraight.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Power/PowerShaftTShapedIntersection/PowerShaftTShapedIntersection.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Power/PowerShaftTurn/PowerShaftTurn.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Power/PowerWheel/PowerWheel.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Power/WaterWheel/WaterWheel.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Science/Inventor/Inventor.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Science/GolemFactory/GolemFactory.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Science/GolemPartFactory/GolemPartFactory.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Science/Observatory/Observatory.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Storage/LargeWarehouse/LargeWarehouse.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Storage/LogPile/LogPile.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Storage/SmallWarehouse/SmallWarehouse.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Water/LargeWaterTank/LargeWaterTank.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Water/MechanicalWaterPump/MechanicalWaterPump.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Water/SmallWaterTank/SmallWaterTank.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Water/StreamGauge/StreamGauge.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Water/WaterDump/WaterDump.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Water/WaterPump/WaterPump.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Wood/Forester/Forester.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Wood/GearWorkshop/GearWorkshop.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Wood/LumberMill/LumberMill.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Wood/LumberjackFlag/LumberjackFlag.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Wood/PaperMill/PaperMill.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Wood/PrintingPress/PrintingPress.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Wood/TappersShack/TappersShack.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Wood/WoodWorkshop/WoodWorkshop.Folktails"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"UniqueBuildings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Buildings/Decoration/Scarecrow/Scarecrow.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Decoration/WindGauge/WindGauge.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Food/Beehive/Beehive.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Housing/DoubleLodge/DoubleLodge.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Housing/FlippedLodge/FlippedLodge.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Housing/Lodge/Lodge.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Housing/MiniLodge/MiniLodge.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Housing/TripleLodge/TripleLodge.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Power/LargeWindmill/LargeWindmill.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Power/Windmill/Windmill.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Science/BiofuelRefinery/BiofuelRefinery.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Science/BiofuelTank/BiofuelTank.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Science/DisposalFacility/DisposalFacility.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Storage/UndergroundWarehouse/UndergroundWarehouse.Folktails"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Buildings/Water/IrrigationTower/IrrigationTower.Folktails"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"Needs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"BeaverStatue"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"BeeSting"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Biofuel"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Books"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Bread"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"BrokenTeeth"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Campfire"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Carousel"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Carrots"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"CattailCracker"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"FlameOfProgress"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Food"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"GrilledChestnuts"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"GrilledPotatoes"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"GrilledSpadderdock"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Injury"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"LaborerMonument"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Lido"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MaplePastry"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MudBath"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Overheat"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Roof"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"RooftopTerrace"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Shelter"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Shrine"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Shrub"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"PollutionPoisoning"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"PollutedMechanisms"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Sleep"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"SunflowerSeeds"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Temple"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TributeToIngenuity"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Water"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"WetFur"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"WaterCooling"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Scarecrow"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ShovelAndPan"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"Goods"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Berries"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Biofuel"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Book"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Bread"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Carrot"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"CattailCracker"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"CattailFlour"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"CattailRoot"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Chestnut"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Dandelion"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Explosives"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Gear"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"GolemChassis"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"GolemHead"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"GolemLimb"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"GrilledChestnut"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"GrilledPotato"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"GrilledSpadderdock"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Log"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MaplePastry"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MapleSyrup"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Medicine"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MetalBlock"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Paper"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"PineResin"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Plank"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Potato"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ScrapMetal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Spadderdock"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"SunflowerSeeds"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TreatedPlank"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Water"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"WheatFlour"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Wheat"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"NeedModifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"StartingBuildingId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DistrictCenter.Folktails"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <h1 id="wellbeingtier"> <a href="#wellbeingtier" class="anchor-heading" aria-labelledby="wellbeingtier"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> WellbeingTier </h1> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://json-schema.org/draft-04/schema#"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"CharacterType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"BonusId"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Bonuses"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"Wellbeing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"Multiplier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"Wellbeing"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Multiplier"</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"WellbeingThreshold"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"MultiplierIncrement"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nl">"CharacterType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BeaverAdult"</span><span class="p">,</span><span class="w">
+	</span><span class="nl">"BonusId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LifeExpectancy"</span><span class="p">,</span><span class="w">
+	</span><span class="nl">"Bonuses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Wellbeing"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Multiplier"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+  </span><span class="nl">"WellbeingThreshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"MultiplierIncrement"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div> <hr> <footer> Copyright &copy; 2021-2022 Timberborn-Modding-Central. Distributed by an <a href="https://github.com/Timberborn-Modding-Central/TimberAPI/blob/main/LICENSE">GNU LGPL v2.1 license.</a> <div class="d-flex mt-2"> <p class="text-small text-grey-dk-000 mb-0"> <a href="https://github.com/Timberborn-Modding-Central/TimberAPI_Docs/tree/main//documentation/specifications/schemas.md" id="edit-this-page">Edit this page on GitHub.</a> </p> </div> </footer> </div> </div> <div class="search-overlay"></div> </div> </body> </html>

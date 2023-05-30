@@ -1,0 +1,338 @@
+{"0": {
+    "doc": "Entity Linker",
+    "title": "Entity Linker",
+    "content": " ",
+    "url": "/entity_linkers/",
+    
+    "relUrl": "/entity_linkers/"
+  },"1": {
+    "doc": "Entity Linker",
+    "title": "Table of contents",
+    "content": ". | Creating a new link | Deleting a link | Usage | . TimberAPI adds a custom EntityLinker Monobehaviour class to all buildings in the game. The EntityLinker class can be used to link two entities with eachother. A new link creates a new instance of EntityLink which is stored in both the linker and linkees EntityLinks property. ",
+    "url": "/entity_linkers/#table-of-contents",
+    
+    "relUrl": "/entity_linkers/#table-of-contents"
+  },"2": {
+    "doc": "Entity Linker",
+    "title": "Creating a new link",
+    "content": "var linker = gameObject.GetComponent&lt;EntityLinker&gt;(); var linkee = otherGameObject.GetComponent&lt;EntityLinker&gt;(); linker.CreateLink(linkee); . ",
+    "url": "/entity_linkers/#creating-a-new-link",
+    
+    "relUrl": "/entity_linkers/#creating-a-new-link"
+  },"3": {
+    "doc": "Entity Linker",
+    "title": "Deleting a link",
+    "content": "var linker = gameObject.GetComponent&lt;EntityLinker&gt;(); linker.DeleteLink(linker.EntityLinks.First()); . ",
+    "url": "/entity_linkers/#deleting-a-link",
+    
+    "relUrl": "/entity_linkers/#deleting-a-link"
+  },"4": {
+    "doc": "Entity Linker",
+    "title": "Usage",
+    "content": "The use of these links is left to the modder. See the EntityLinkerExample on the TimberAPI Examples for an example implementation. ",
+    "url": "/entity_linkers/#usage",
+    
+    "relUrl": "/entity_linkers/#usage"
+  },"5": {
+    "doc": "mod.json schema",
+    "title": "Mod.json",
+    "content": " ",
+    "url": "/making_mods/mod_json/#modjson",
+    
+    "relUrl": "/making_mods/mod_json/#modjson"
+  },"6": {
+    "doc": "mod.json schema",
+    "title": "Table of contents",
+    "content": ". | Schema | . ",
+    "url": "/making_mods/mod_json/#table-of-contents",
+    
+    "relUrl": "/making_mods/mod_json/#table-of-contents"
+  },"7": {
+    "doc": "mod.json schema",
+    "title": "Schema",
+    "content": "{ \"$schema\": \"http://json-schema.org/draft-04/schema#\", \"title\": \"mod.json\", \"description\": \"Configuration for a mod using TimberAPI\", \"type\": \"object\", \"properties\": { \"Name\": { \"description\": \"The name of the mod\", \"type\": \"string\" }, \"Version\": { \"description\": \"The version of the mod\", \"type\": \"string\" }, \"UniqueId\": { \"description\": \"The unique identifier of the mod\", \"type\": \"string\" }, \"MinimumApiVersion\": { \"description\": \"Minimum TimberAPI version the mod can use\", \"type\": \"string\" }, \"MinimumGameVersion\": { \"description\": \"Minimum game version the mod works with\", \"type\": \"string\" }, \"EntryDll\": { \"description\": \"The name of the entry dll file\", \"type\": \"string\" }, \"Assets\": { \"type\": \"array\", \"items\": [ { \"type\": \"object\", \"properties\": { \"Prefix\": { \"type\": \"string\" }, \"Scenes\": { \"type\": \"array\", \"items\": [ { \"type\": \"string\", \"pattern\": \"(MainMenu|InGame|MapEditor|All)+\" } ] } }, \"required\": [ \"Prefix\", \"Scenes\" ] } ] } }, \"required\": [ \"Name\", \"Version\", \"UniqueId\", \"MinimumApiVersion\", \"MinimumGameVersion\" ] } . ",
+    "url": "/making_mods/mod_json/#schema",
+    
+    "relUrl": "/making_mods/mod_json/#schema"
+  },"8": {
+    "doc": "mod.json schema",
+    "title": "mod.json schema",
+    "content": " ",
+    "url": "/making_mods/mod_json/",
+    
+    "relUrl": "/making_mods/mod_json/"
+  },"9": {
+    "doc": "Exporting Game Files",
+    "title": "Exporting Game Files",
+    "content": " ",
+    "url": "/making_mods/exporting_game_files/",
+    
+    "relUrl": "/making_mods/exporting_game_files/"
+  },"10": {
+    "doc": "Exporting Game Files",
+    "title": "Table of contents",
+    "content": ". | Prerequisites | Instruction: | . ",
+    "url": "/making_mods/exporting_game_files/#table-of-contents",
+    
+    "relUrl": "/making_mods/exporting_game_files/#table-of-contents"
+  },"11": {
+    "doc": "Exporting Game Files",
+    "title": "Prerequisites",
+    "content": ". | Installed Unity Editor | Downloaded Assetripper from: https://github.com/AssetRipper/AssetRipper/releases Known working version: 0.3.0.2 | Folder where it can Export files to. | Note it will replace/remove all files in the folder! | . | Separate Unity project for AssetRipper. | Installed Thunderkit in above Project Thunderkit installation | In UnityHub press … and add this command line “-disable-assembly-updater” | . | . ",
+    "url": "/making_mods/exporting_game_files/#prerequisites",
+    
+    "relUrl": "/making_mods/exporting_game_files/#prerequisites"
+  },"12": {
+    "doc": "Exporting Game Files",
+    "title": "Instruction:",
+    "content": ". | Open Asset ripper | Change Setting of Script Export format to DLL Export without Renaming. | Select Open File and Select Timberborn.exe | Select Export All and select the folder where to Export files. | Open Exported files when export is done. | go to /Timberborn/ExportedProject and Rename Asset folder to Timberborn. | Open renamed folder and Select “Plugins” folder and delete it. | Can stop here if you just want to look at text files. | . | Copy Renamed folder to Unity Projects Asset folder. | Start Unity Editor. | it may crash or freeze with so many files to import then force close the editor. | . | Open Thunderkit settings. | Open tab ThunderKit Settings and press Import. | Find model you want to check. | . ",
+    "url": "/making_mods/exporting_game_files/#instruction",
+    
+    "relUrl": "/making_mods/exporting_game_files/#instruction"
+  },"13": {
+    "doc": "Specifications",
+    "title": "Specifications",
+    "content": " ",
+    "url": "/specifications/",
+    
+    "relUrl": "/specifications/"
+  },"14": {
+    "doc": "Specifications",
+    "title": "Table of contents",
+    "content": ". | Specification usage | Specification naming . | overwrite Timberborn or custom specifications | Overwriting existing arrays (.replace) | Creating new items (.original) | Creating new custom specifications | . | . Specifications have a large range of usage. For example, you can make new or edit existing: Factions, Goods, Needs, Recipes and more. The specifications are automatically loaded within the specification folder relative to your mod location. You can place any sub folder inside the specification folder, all sub folders will be ignored. ",
+    "url": "/specifications/#table-of-contents",
+    
+    "relUrl": "/specifications/#table-of-contents"
+  },"15": {
+    "doc": "Specifications",
+    "title": "Specification usage",
+    "content": "In the following sections we will show you examples how you can use the specification system. For all examples we are using the good specification of berries. // GoodSpecification.Berries.json { \"Id\": \"Berries\", \"BackwardCompatibleIds\": [ ], \"DisplayNameLocKey\": \"Good.Berries.DisplayName\", \"PluralDisplayNameLocKey\": \"Good.Berries.PluralDisplayName\", \"ConsumptionEffects\": [ { \"NeedId\": \"Food\", \"Points\": 0.3 } ], \"GoodType\": \"Box\", \"VisibleContainer\": { \"Value\": \"Box\" }, \"CarryingAnimation\": \"CarryInHands\", \"Weight\": 1, \"TopBarGroupId\": \"Food\", \"Icon\": \"Sprites/Goods/BerriesIcon\", \"RequiredFeatureToggle\": \"\" } . ",
+    "url": "/specifications/#specification-usage",
+    
+    "relUrl": "/specifications/#specification-usage"
+  },"16": {
+    "doc": "Specifications",
+    "title": "Specification naming",
+    "content": "In this section we are going to look how the file naming is setup for GoodSpecification.Berries.json Let’s split this up: . | Good Specification type | Specification Specifies that it is a specification | .Berries The name of the good | .json File extension | . overwrite Timberborn or custom specifications . The default behaviour is to merge any original specification with the same name. Let’s create a GoodSpecification.Berries.json file inside your specification folder to adjust the weight. { \"Weight\": 2 } . When you load the game all berries have now a weight of 2 instead of 1. As you can see you only have to place the keys in you want to change. Note: When the specification has an array with object you CANNOT merge these values, it will add a new object inside the array. Results differ depending on the specification. Overwriting existing arrays (.replace) . Sometimes you want to completely replace the original array, this can be done by ending the filename with .replace. For example GoodSpecification.Berries.replace.json . { \"ConsumptionEffects\": [ { \"NeedId\": \"Water\", \"Points\": 0.33 } ] } . When you load the game the Food consumption effect will be removed and replaced with water. And so berries will give you water instead of food! . Creating new items (.original) . When you want to create a new faction, good, need or custom specification item you need to end the filename with .original. The .original lets the specification system know that it is the original specification that needs to be overwritten. For all Timberborns specification jsons see: Timberborn specification schemas, if you want more examples you need to decompile the assets. Example: . // GoodSpecification.Cookie.original.json { \"Id\": \"Cookie\", \"BackwardCompatibleIds\": [ ], \"DisplayNameLocKey\": \"Good.Berries.DisplayName\", \"PluralDisplayNameLocKey\": \"Good.Berries.PluralDisplayName\", \"ConsumptionEffects\": [ { \"NeedId\": \"Food\", \"Points\": 0.3 } ], \"GoodType\": \"Box\", \"VisibleContainer\": { \"Value\": \"Box\" }, \"CarryingAnimation\": \"CarryInHands\", \"Weight\": 1, \"TopBarGroupId\": \"Food\", \"Icon\": \"Sprites/Goods/BerriesIcon\", \"RequiredFeatureToggle\": \"\" } . Note: When implementing this specific example it probably won’t work due validations of goods that are not used. This differs from each specification of Timberborn or a custom one. Creating new custom specifications . When your mod need a specification for other modders and yourself to use, you can do this by ending the filename with .original. This let the specification system know that you have the original file and others can overwrite it. Let’s add a specification so modders and users can modify which golem type will be used in a faction. Create a specification file GolemFactionSpecification.Folktails.original.json inside the specification folder. { \"FactionId\": \"Folktails\", \"GolemId\": \"IronTeeth\" } . Create a cs file GolemFactionSpecification.cs inside your mod project. public class GolemFactionSpecification { public GolemFactionSpecification(string factionId, string golemId) { FactionId = factionId; GolemId = golemId; } public string FactionId { get; set; } public string GolemId { get; set; } } . Create a cs file GolemFactionSpecificationObjectDeserializer.cs inside your mod project. This file is for serialization and deserialization. The GolemSpecification does not get used in saving so we can leave that empty. public class GolemFactionSpecificationObjectDeserializer : IObjectSerializer&lt;GolemFactionSpecification&gt; { public void Serialize(GolemFactionSpecification value, IObjectSaver objectSaver) { throw new NotSupportedException(); } public Obsoletable&lt;GolemFactionSpecification&gt; Deserialize(IObjectLoader objectLoader) { return (Obsoletable&lt;GolemFactionSpecification&gt;) new GolemFactionSpecification(objectLoader.Get(new PropertyKey&lt;string&gt;(\"FactionId\")), objectLoader.Get(new PropertyKey&lt;string&gt;(\"GolemId\"))); } } . To grap all your specification you need an instance of ISpecificationService and the GolemFactionSpecificationObjectDeserializer. Use the following code somewhere you need to load the specifications. _specificationService.GetSpecifications(golemFactionSpecificationObjectDeserializer).ToImmutableArray(); . ",
+    "url": "/specifications/#specification-naming",
+    
+    "relUrl": "/specifications/#specification-naming"
+  },"17": {
+    "doc": "ToolGroups",
+    "title": "ToolGroups",
+    "content": " ",
+    "url": "/tool_groups/",
+    
+    "relUrl": "/tool_groups/"
+  },"18": {
+    "doc": "ToolGroups",
+    "title": "Table of contents",
+    "content": ". | ToolGroupSpecification Scheme | How To Register a New ToolGroup | . ToolGroups are used to group multiple Tools together. ",
+    "url": "/tool_groups/#table-of-contents",
+    
+    "relUrl": "/tool_groups/#table-of-contents"
+  },"19": {
+    "doc": "ToolGroups",
+    "title": "ToolGroupSpecification Scheme",
+    "content": "| Property | Default | Required | Description | . | Id | - | Yes | Unique identifier | . | GroupId | - | No | Group unique identifier | . | Type | - | Yes | Defines what tool will be created, check out TimberApi ToolGroups to find the identifiers or check out the mod creator | . | Section | BottomBar | No | Location indicator | . | Layout | Green | No | Defines what button layout will be created | . | Order | - | Yes | Position of ToolButton | . | Icon | - | Yes | Asset path to sprite | . | NameLocKey | - | Yes | Localization key | . | FallbackGroup | false | Yes | Determines whether this group is the fallback group. This is provided by the game so should always be false | . | DevMode | false | No | Required dev mode when true | . | Hidden | false | No | Hides existing tool when true | . | GroupInformation | - | Sometimes | Implementation defined data, check out the mod creator for this information | . Example . { \"Id\": \"Other\", \"GroupId\": \"Paths\", \"Type\": \"PlaceableObjectTool\", \"Section\": \"BottomBar\", \"Order\": \"180\", \"NameLocKey\": \"ToolGroups.Other\", \"Icon\": \"Sprites/BottomBar/BuildingGroups/Other\", \"FallbackGroup\": false, \"DevMode\": true, \"Hidden\": true, \"GroupInformation\": { \"BottomBarSection\": 1 } } . ",
+    "url": "/tool_groups/#toolgroupspecification-scheme",
+    
+    "relUrl": "/tool_groups/#toolgroupspecification-scheme"
+  },"20": {
+    "doc": "ToolGroups",
+    "title": "How To Register a New ToolGroup",
+    "content": "When creating a Tool the original method of Timberborn does not work! Follow the step to register your tool to TimberApi ToolSystem. | Create a new ToolGroup class that extends ApiToolGroup | Create a new ToolGroupFactory class that implements IToolGroupFactory | Set a unique Id, this will be the Type identifier in the ToolGroupSpecification | Return a new instance of your ToolGroup class | MultiBind the ToolGroupFactory to IToolGroupFactory in a configurator | . Example . public class PlantingModeToolGroup : ApiToolGroup, IPlantingToolGroup { public PlantingModeToolGroup(string id, string? groupId, int order, string section, string displayNameLocKey, bool devMode, Sprite icon) : base(id, groupId, order, section, displayNameLocKey, devMode, icon) { } } . public class PlantingModeToolGroupFactory : IToolGroupFactory { public string Id =&gt; \"PlantingModeToolGroup\"; public IToolGroup Create(ToolGroupSpecification toolGroupSpecification) { return new PlantingModeToolGroup( toolGroupSpecification.Id, toolGroupSpecification.GroupId, toolGroupSpecification.Order, toolGroupSpecification.Section, toolGroupSpecification.NameLocKey, toolGroupSpecification.DevMode, toolGroupSpecification.Icon ); } } . [Configurator(SceneEntrypoint.InGame)] public class PlantingModeToolGroupConfigurator : IConfigurator { public void Configure(IContainerDefinition containerDefinition) { containerDefinition.MultiBind&lt;IToolGroupFactory&gt;().To&lt;PlantingModeToolGroupFactory&gt;().AsSingleton(); } } . ",
+    "url": "/tool_groups/#how-to-register-a-new-toolgroup",
+    
+    "relUrl": "/tool_groups/#how-to-register-a-new-toolgroup"
+  },"21": {
+    "doc": "Config",
+    "title": "Config",
+    "content": " ",
+    "url": "/config/",
+    
+    "relUrl": "/config/"
+  },"22": {
+    "doc": "Config",
+    "title": "Table of contents",
+    "content": ". | Usage | . Configs are used to save and use some values in your mod that you want the end user to be able to easily change. ",
+    "url": "/config/#table-of-contents",
+    
+    "relUrl": "/config/#table-of-contents"
+  },"23": {
+    "doc": "Config",
+    "title": "Usage",
+    "content": "To start using the configs create a class that inherits the IConfig interface. For example . public class TestConfig : IConfig { ... } . Next you want want to set the filename using the ConfigFileName field. For example . public string ConfigFileName =&gt; \"Filename\"; . Then you can add your configs as public properties. For example . public string Foo1 {get; set;} public int Foo2 {get; set;} . Set the default values in a constructor . public TestConfig() { Foo1 = \"value1\"; Foo2 = 123; } . To get a reference to the config call the IMod.Configs.Get&lt;&gt;() method. For example . public class FooMod: IModEntryPoint { public static TestConfig Config; public void Entry(IMod mod, IConsoleWriter consoleWriter) { Config = mod.Configs.Get&lt;TestConfig&gt;(); } } . Calling the Get method will create the config file in your mod’s configs folder if it doesn’t exist. In this example it would be . // configs/Filename.json {\"Foo1\":\"value1,\"Foo2\":2} . Full example: . public class TestConfig : IConfig { public string ConfigFileName =&gt; \"Filename\"; public string Foo1 {get; set;} public int Foo2 {get; set;} public TestConfig() { Foo1 = \"value1\"; Foo2 = 123; } } public class FooMod: IModEntryPoint { public static TestConfig Config; public void Entry(IMod mod, IConsoleWriter consoleWriter) { Config = mod.Configs.Get&lt;TestConfig&gt;(); } } . ",
+    "url": "/config/#usage",
+    
+    "relUrl": "/config/#usage"
+  },"24": {
+    "doc": "Tools",
+    "title": "Tool",
+    "content": " ",
+    "url": "/tools/#tool",
+    
+    "relUrl": "/tools/#tool"
+  },"25": {
+    "doc": "Tools",
+    "title": "Table of contents",
+    "content": ". | ToolSpecification Scheme | How To Register a New Tool | How To Register a New Tool With Custom ToolInformation | . Tools will decide what actions will be taken when clicking on a ToolButton. For example placing buildings or prioritizing builders. ",
+    "url": "/tools/#table-of-contents",
+    
+    "relUrl": "/tools/#table-of-contents"
+  },"26": {
+    "doc": "Tools",
+    "title": "ToolSpecification Scheme",
+    "content": "| Property | Default | Required | Description | . | Id | - | Yes | Unique identifier | . | GroupId | - | No | Group unique identifier | . | Type | - | Yes | Defines what tool will be created, check out TimberApi Tools to find the identifiers or check out the mod creator | . | Layout | Brown | No | Defines what button layout will be created | . | Order | - | Yes | Position of ToolButton | . | Icon | - | Yes | Asset path to sprite | . | NameLocKey | - | Yes | Localization key | . | DescriptionLocKey | - | Yes | Localization key | . | DevMode | false | No | Required dev mode when true | . | Hidden | false | No | Hides existing tool when true | . | ToolInformation | - | Sometimes | Implementation defined data, check out the mod creator for this information | . Example . { \"Id\": \"RuinColumnH8\", \"GroupId\": \"Ruins\", \"Type\": \"PlaceableObjectTool\", \"Layout\": \"blue\", \"Order\": 8, \"Icon\": \"RuinColumnH8Icon\", \"NameLocKey\": \"Building.Ruins.DisplayName\", \"DescriptionLocKey\": \"Building.Ruins.Description\", \"DevMode\": true, \"Hidden\": false, \"ToolInformation\": { \"BuildingPrefabName\": \"RuinColumnH8\", \"BottomBarSection\": 1 } } . ",
+    "url": "/tools/#toolspecification-scheme",
+    
+    "relUrl": "/tools/#toolspecification-scheme"
+  },"27": {
+    "doc": "Tools",
+    "title": "How To Register a New Tool",
+    "content": "When creating a Tool the original method of Timberborn does not work! Follow the step to register your tool to TimberApi ToolSystem. | Create a new Tool, this step has not changed. Make sure the ToolGroup can be set from outside | Create a new ToolFactory class that implements IToolFactory | Set a unique Id, this will be the Type identifier in the ToolSpecification | Return your tool and set the ToolGroup given in with the Create method | MultiBind the ToolFactory to IToolFactory in a configurator | . Example . public class CancelPlantingToolFactory : IToolFactory { ... public string Id =&gt; \"CancelPlantingTool\"; public Tool Create(ToolSpecification toolSpecification, ToolGroup? toolGroup = null) { return new CancelPlantingTool(_plantingSelectionService, toolGroup); } } . [Configurator(SceneEntrypoint.InGame)] public class CancelPlantingToolConfigurator : IConfigurator { public void Configure(IContainerDefinition containerDefinition) { containerDefinition.MultiBind&lt;IToolFactory&gt;().To&lt;CancelPlantingToolFactory&gt;().AsSingleton(); } } . ",
+    "url": "/tools/#how-to-register-a-new-tool",
+    
+    "relUrl": "/tools/#how-to-register-a-new-tool"
+  },"28": {
+    "doc": "Tools",
+    "title": "How To Register a New Tool With Custom ToolInformation",
+    "content": "When creating a Tool the original method of Timberborn does not work! Follow the step to register your tool to TimberApi ToolSystem. | Create a new Tool, this step has not changed. Make sure the ToolGroup can be set from outside | Create a new ToolFactory class that extends BaseToolFactory&lt;T&gt; where T is class with all needed properties | Set a unique Id, this will be the Type identifier in the ToolSpecification | The DeserializeToolInformation will be used to deserialize the given class like any other deserializer in Timberborn | Return your tool and set the ToolGroup given in with the CreateTool method | MultiBind the ToolFactory to IToolFactory in a configurator | . Example . public class PlaceableObjectToolFactory : BaseToolFactory&lt;PlaceableObjectToolToolInformation&gt; { ... public override string Id =&gt; \"PlaceableObjectTool\"; protected override Tool CreateTool(ToolSpecification toolSpecification, PlaceableObjectToolToolInformation toolInformation, ToolGroup? toolGroup) { var prefab = _objectCollectionService.GetAllMonoBehaviours&lt;Prefab&gt;().Single(o =&gt; o.IsNamed(toolInformation.PrefabName)); var placeableBlockObject = prefab.GetComponentFast&lt;PlaceableBlockObject&gt;(); placeableBlockObject.SetPrivateInstanceFieldValue(\"_devModeTool\", toolSpecification.DevMode); placeableBlockObject.SetPrivateInstanceFieldValue(\"_toolOrder\", toolSpecification.Order); var blockObjectTool = new BlockObjectTool(_blockObjectToolDescriber, _inputService, _areaPickerFactory, _previewPlacerFactory, _uiSoundController, _blockObjectPlacerService, _mapEditorMode); if(toolGroup == null) blockObjectTool.Initialize(placeableBlockObject); else blockObjectTool.Initialize(placeableBlockObject, toolGroup); return blockObjectTool; } protected override PlaceableObjectToolToolInformation DeserializeToolInformation(IObjectLoader objectLoader) { return new PlaceableObjectToolToolInformation(objectLoader.Get(new PropertyKey&lt;string&gt;(\"PrefabName\"))); } } . [Configurator(SceneEntrypoint.InGame)] public class CancelPlantingToolConfigurator : IConfigurator { public void Configure(IContainerDefinition containerDefinition) { containerDefinition.MultiBind&lt;IToolFactory&gt;().To&lt;PlaceableObjectToolFactory&gt;().AsSingleton(); } } . ",
+    "url": "/tools/#how-to-register-a-new-tool-with-custom-toolinformation",
+    
+    "relUrl": "/tools/#how-to-register-a-new-tool-with-custom-toolinformation"
+  },"29": {
+    "doc": "Tools",
+    "title": "Tools",
+    "content": " ",
+    "url": "/tools/",
+    
+    "relUrl": "/tools/"
+  },"30": {
+    "doc": "Bottom Bar",
+    "title": "Bottom bar",
+    "content": " ",
+    "url": "/bottom_bar/#bottom-bar",
+    
+    "relUrl": "/bottom_bar/#bottom-bar"
+  },"31": {
+    "doc": "Bottom Bar",
+    "title": "Table of contents",
+    "content": ". | Add buildings | Add groups | Specification information . | ToolSpecification | ToolGroupSpecification | . | . TimberApi has reworked the bottom bar to work alongside the Tool and ToolGroup. This gives mod creators and mod users more customization options. The implementation will provide the following features for the bottom bar: NOTE: This feature is NOT available for the map-editor . | Customizable Tool/Group order | Customizable styling | Customizable title/description (for most in game buttons) | Customizable dev mode toggle | Customizable icon | Unlimited layered groups | Multiple first row sections | Hide existing Tools/Groups | . ",
+    "url": "/bottom_bar/#table-of-contents",
+    
+    "relUrl": "/bottom_bar/#table-of-contents"
+  },"32": {
+    "doc": "Bottom Bar",
+    "title": "Add buildings",
+    "content": ". | Add the scripts Prefab &amp; PlaceableBlockObject to the building. | Fill in the Prefab Name, this will become the id of the specification. | Fill in the Tool Order at which position the tool should be placed. | Optionally, fill in Tool Group Id with the id of the ToolGroupSpecification. | Optionally, enable Dev Mode Tool if it’s a tool for development. | . Notes . | TimberApi will increase the Tool Order with a x10 to create space for adding groups. | If you want to change the layout or other aspects check out Add custom tools. and edit your Tool without the .override addition. | . ",
+    "url": "/bottom_bar/#add-buildings",
+    
+    "relUrl": "/bottom_bar/#add-buildings"
+  },"33": {
+    "doc": "Bottom Bar",
+    "title": "Add groups",
+    "content": "Add the following file as an ToolGroupSpecification eg. Other.ToolGroupSpecification.original.json . { \"Id\": \"Other\", \"GroupId\": \"Optionally\", \"Order\": \"180\", \"NameLocKey\": \"ToolGroups.Other\", \"Icon\": \"Sprites/BottomBar/BuildingGroups/Other\" } . Notes . | Remove the GroupId if you want to have it on the bottombar | For more detailed information checkout ToolGroups | . ",
+    "url": "/bottom_bar/#add-groups",
+    
+    "relUrl": "/bottom_bar/#add-groups"
+  },"34": {
+    "doc": "Bottom Bar",
+    "title": "Specification information",
+    "content": "ToolSpecification . The BottomBarSection defines the area where the buttons are located on the first row. { ... \"ToolInformation\": { \"BottomBarSection\": 1 } ... } . ToolGroupSpecification . { ... \"GroupInformation\": { \"BottomBarSection\": 1 } ... } . ",
+    "url": "/bottom_bar/#specification-information",
+    
+    "relUrl": "/bottom_bar/#specification-information"
+  },"35": {
+    "doc": "Bottom Bar",
+    "title": "Bottom Bar",
+    "content": " ",
+    "url": "/bottom_bar/",
+    
+    "relUrl": "/bottom_bar/"
+  },"36": {
+    "doc": "Home",
+    "title": "TimberAPI",
+    "content": "Unofficial API to enable easier Timberborn modding . Currently supported features: . | Bind your code easily with dependency injection | A comprehensive UI component builder | Asset and object injection, provide your own icons or even unity bundles | Modify and add specifications to change the game - with just JSON | Labels and localization support | Link entities together for data communication | Configuration files for easy alteration of the mods behaviour | . ",
+    "url": "/#timberapi",
+    
+    "relUrl": "/#timberapi"
+  },"37": {
+    "doc": "Home",
+    "title": "Provided Sample Plugin with API examples",
+    "content": "Example Plugin . ",
+    "url": "/#provided-sample-plugin-with-api-examples",
+    
+    "relUrl": "/#provided-sample-plugin-with-api-examples"
+  },"38": {
+    "doc": "Home",
+    "title": "Contributors",
+    "content": ". ",
+    "url": "/#contributors",
+    
+    "relUrl": "/#contributors"
+  },"39": {
+    "doc": "Home",
+    "title": "Home",
+    "content": " ",
+    "url": "/",
+    
+    "relUrl": "/"
+  },"40": {
+    "doc": "Animating objects",
+    "title": "Animating objects",
+    "content": "# Create Custom Animations {: .no_toc } In this guide we will explain the basic steps to adding animations to your objects. ## {: .no_toc .text-delta } 1. TOC {:toc} ## Creating a prefab First, you will need a prefab that has been added to your project which you want to animate. Then we will need a empty game object, which will hold the animation controller. Lastly, we will need a object that we want to animate. For this guide we will use the standard cube. *Important*: The name of the object that you want to animate has to end with \"_Animated\". Otherwise the object will not be animated when loaded into the game. This means your hierarchy should look something like this: ```csharp MyFirstAnimatedObject (Empty) AnimationController (Empty) Cube_Animated (Cube) ``` ## Adding the animation controller Now we can add an animation controller to the AnimationController game object. We use a empty game object, so that we can animate all objects that are inside it. To add a animation control op the object and on the inspector add a new component: ![add_animator.png](/assets/images/animation/add_animator.png) Next, we want to add a animator object to the animation controller. To do this, right-click inside your folder and under create select \"animation controller\". ![add_animator.png](/assets/images/animation/create_animation_controller.png) Now add the animation controller that we just created to the AnimationController object by dragging into the box. Now the AnimationController object should look something like this: ![add_animator.png](/assets/images/animation/added_controller_to_controller_object.png) ## Creating an animation Before we can add an animation to the object, we have to make an animation object. Do the same as for the animation controller, right-click and under create select animation. Then double click to open. ![add_animator.png](/assets/images/animation/create_animation_object.png) We then have to add this animation in the animation controller. Double click the animation controller to open and drag the animation into the window. The animation automatically connects to the entry state. This means that when the object is loaded, it will always play this animation. Now double click on the animation in the animator window. For this guide we want the animation to loop, so select both boxes, after which it should like the following: ![add_animator.png](/assets/images/animation/added_animation_to_controller.png) *Note*: You can use the layers to give objects inside a prefab different animations. For example the windGauge uses this to, as the rotor will continue to move even when the wind-direction doesn't change. Now we can start animating! To do this select the AnimationController object and open the animation window. After which you need to select Add Property --> Cube --> Transform --> Rotation. Now you should have something like this: ![add_animator.png](/assets/images/animation/animation_window.png) As we only want to rotate the cube, we leave the start the same. Select the end by clicking on 1:00. Now we can select which axes we want the cube to rotate around. We will go with the y-axis. We fill in 360 (degrees). If we select play, we will see the cube rotating! ![add_animator.png](/assets/images/animation/cube_animation.png) ## Adding logic Sadly, because Timberborn is a little bit different, we have to add some code to make it actually rotate. You will have to add a component to the main prefab with the following code: ```csharp using UnityEngine; public class MyFirstAnimationScript : MonoBehaviour { private Animator _animator; void Start() { _animator = GetComponentInChildren(true); _animator.speed = 1.0f; } } ``` You should now have it a working cube! ![add_animator.png](/assets/images/animation/animated_cube.gif) ",
+    "url": "/custom_assets/animation",
+    
+    "relUrl": "/custom_assets/animation"
+  },"41": {
+    "doc": "Create Custom Assets",
+    "title": "Create Custom Assets",
+    "content": "# Create Custom Assets Source: [Raft Modding](https://api.raftmodding.com/modding-tutorials/how-to-create-an-assetbundle) {: .fs-1 .mt-n5 .mb-0 } ",
+    "url": "/custom_assets/create",
+    
+    "relUrl": "/custom_assets/create"
+  },"42": {
+    "doc": "Custom Assets",
+    "title": "Custom Assets",
+    "content": "# Custom Assets {: .no_toc } TimberAPI gives the possibility to add custom assets to the game. To make assets of all mods sharable we are using unique prefixes to separate each mods assets. ## {: .no_toc .text-delta } 1. TOC {:toc} ## Register Custom Assets Assets are loaded from the `assets` folder at the mods root. The folder should contain an asset bundle, which contains all the assets the mod uses. To register the assets, add an `Assets` element into your mod.json. Example below ```json ... \"Assets\": [ { \"Prefix\": \"MyPrefix\", \"Scenes\": [ \"InGame\" ] } ] ... ``` This registers the assets with the given prefix. The assets are loaded in the given scenes. *SceneEntryPoints: `InGame`, `MainMenu`, `MapEditor`, `All` ## Using custom assets The assets can be used in the game from either specifications or straight from code. ### From specifications Some specifications have elements that use assets as their values. You can use your assets in those by using syntax `//` ### From code TimberAPI provides the interface `IAssetLoader` to load everyone's custom assets. Request this interface in any class you want. The asset string builds as following - Prefix: the one you registered in the main file. - Subfolder: optional folders that are located within the asset folder(Or the default one you registered). - File name: file name without the extension. - Item name: name of the item inside the bundle. ```csharp // Foo.cs public class Foo { private readonly IAssetLoader _assetLoader; public Foo(IAssetLoader assetLoader) { _assetLoader = assetLoader; } public void Bar() { _assetLoader.Load(\"prefix/subfolder/filename/itemname\"); } } ``` ",
+    "url": "/custom_assets/",
+    
+    "relUrl": "/custom_assets/"
+  },"43": {
+    "doc": "Dependency Injection",
+    "title": "Dependency Injection",
+    "content": "# Dependency Injection {: .no_toc } Timberborn has very robust Dependency Injection for a game. This means you can access most things in the game very easily, as you can tell Timberborn to automatically give you what you need. ## {: .no_toc .text-delta } 1. TOC {:toc} ## Using configurators The configurators let you bind classes to the dependency injection system. ```csharp // ExampleConfigurator.cs [Configurator(SceneEntrypoint.InGame)] // This attribute registers the configurator and tells where it should be loaded public class ExampleConfigurator : IConfigurator { public void Configure(IContainerDefinition containerDefinition) { containerDefinition.Bind().AsSingleton(); containerDefinition.Bind().AsSingleton(); } } ``` *SceneEntryPoints: `InGame`, `MainMenu`, `MapEditor`, `All` ## Using your registered/bound code As long as the class you are trying to use and your class are both bound (with Bind and the `Configurator` is registered within the same entrypoint), you can then use that service! ```csharp // Foo.cs public class Foo { private readonly Bar _bar; public Foo(Bar bar) { _bar = otherClass; } public void Click() { _bar.Add(); } } ``` ```csharp // Bar.cs public class Bar { private int _counter; public int Add() { return _counter++; } } ``` ## Full example ```csharp // ExampleConfigurator.cs [Configurator(SceneEntrypoint.InGame)] public class ExampleConfigurator : IConfigurator { public void Configure(IContainerDefinition containerDefinition) { containerDefinition.Bind().AsSingleton(); containerDefinition.Bind().AsSingleton(); } } ``` ```csharp // Foo.cs public class Foo { private readonly Bar _bar; public Foo(Bar bar) { _bar = otherClass; } public void Click() { _bar.Add(); } } ``` ```csharp // Bar.cs public class Bar { private int _counter; public int Add() { return _counter++; } } ``` ",
+    "url": "/dependency_injection/",
+    
+    "relUrl": "/dependency_injection/"
+  },"44": {
+    "doc": "Making Mods",
+    "title": "Making Mods",
+    "content": "# Making mods {: .no_toc } ## {: .no_toc .text-delta } 1. TOC {:toc} ## Prerequisites {: .no_toc } - basic knowledge of programming / C# (Java is similar) if creating mods with code. - installed BepInEx manually. [Installation guide](/using_mods/manual_install/) ## Setting up TimberAPI TimberAPI gives you the tools you need to get started with interacting with the game. 1. Download the latest TimberAPI (from [Thunderstore](https://timberborn.thunderstore.io/package/Timberborn_Central/TimberAPI/) or [github](https://github.com/Timberborn-Modding-Central/TimberAPI)) 1. Copy the TimberAPI files to `BepInEx\\plugins` folder 1. Launch the game and verify from the console that TimberAPI is loaded Whether you are creating a codeless mod or a mod with code, you need to create a mod.json. Mod.json contains info of your mod so that TimberAPI can load any custom code or assets into the game. Example mod.json below. See also the [mod.json schema](/making_mods/mod_json/) ```json { \"Name\": \"ExampleMod\", // Name of the mod \"Version\": \"1.0.0\", // Version of the mod \"UniqueId\": \"myname.mods.examplemod\", // Unique identifier of the mod \"MinimumApiVersion\": \"0.5.0\", // Minimun TimberAPI version this mod needs \"MinimumGameVersion\": \"0.2.8\", // Minimun game version this mod needs (0.2.8 is the lowest that works with TimberAPI v0.5) \"EntryDll\": \"myname.Mods.ExampleMod.dll\", // Optional. The entry dll if the mod has custom code \"Assets\": [ // Optional. The Prefix for the asset bundle and the scenes where they should be loaded. { \"Prefix\": \"ExampleMod\", \"Scenes\": [ \"InGame\" ] } ] } ``` Along with the mod.json, the mod can contain a .dll(s), asset bundles, localization files and specification files. The folder structure of the mod should be as follows: - PluginFolder - mod.json - CodeForMod.dll - assets - &lt;asset bundles> - lang - &lt;localization files> - specifications - &lt;specification files> ### Mods with code To get started with custom code for Timberborn mods, follow these steps: 1. Create a new .net standard 2.1 code project 1. Add the nuget package `TimberAPI`. [Visual studio guide](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio), [Rider guide](https://www.jetbrains.com/help/rider/Using_NuGet.html) To bind your custom classes to Timberborn's dependency container create a class that inherits the `IConfigurator` interface. Then using the `Configure()` method you can bind the classes. The Configurator class will laso need an `[Configurator]` attribute, so TimberAPI knows where the Configurator is used. See [Dependency injection](/../dependency_injection/) If you need Patches in your mod, then you need to create a class that inherits the `IModEntrypoint` interface. Create a `Entry(IMod mod, IConsoleWriter consoleWriter)` method for the class and call Harmony inside it. For example ```csharp public class MyModEntry : IModEntrypoint { public void Entry(IMod mod, IConsoleWriter consoleWriter) { var harmony = new Harmony(\"my.harmony.id\"); harmony.PatchAll(); } } ``` ## Decompiling Timberborn The NuGet package `Timberborn.GameLib` you installed earlier allows you to see the general structure of the game. However, it's recommended to decompile the game to see how exactly it works. A list of known free decompilers: - [ILSpy](https://github.com/icsharpcode/ILSpy) - [Jetbrains dotPeek](https://www.jetbrains.com/decompiler/) ## Examples It's also helpful to look at existing mods. Most modders publish their source code online and can be found on [ThunderStore](https://timberborn.thunderstore.io/) ![](/assets/images/source_link.png) ",
+    "url": "/making_mods/",
+    
+    "relUrl": "/making_mods/"
+  },"45": {
+    "doc": "Using Mods",
+    "title": "Using Mods",
+    "content": "# {: .no_toc .text-delta } 1. TOC {:toc} # Where do I find mods? Most mods are hosted on **[Mod.io](https://mod.io/g/timberborn)**. There's also a showcase of some the developer recommended mods here: [Steam Showcase](https://store.steampowered.com/news/app/1062090/view/3137323790645839943) * Please note that Mods are not officially supported yet # Installing mods Read [https://mod.io/g/timberborn/r/how-to-install-mods](https://mod.io/g/timberborn/r/how-to-install-mods) on how to install mods. ## Mod Managers Read [https://mod.io/g/timberborn/m/mod-manager](https://mod.io/g/timberborn/m/mod-manager) on how to install the mod manager. ",
+    "url": "/using_mods/",
+    
+    "relUrl": "/using_mods/"
+  },"46": {
+    "doc": "Manual Install",
+    "title": "Manual Install",
+    "content": "# Manual Installation {: .no_toc } ## {: .no_toc .text-delta } 1. TOC {:toc} # Manual Installation (guide for Windows/Steam) Source: [Installing BepInEx](https://docs.bepinex.dev/articles/user_guide/installation/index.html) {: .fs-1 .mt-n5 .mb-0 } All current mods for Timberborn use the framework [BepInEx](https://docs.bepinex.dev/index.html), which provides a great starting point for loading and interacting with the game! 1. Download the latest [BepInEx release](https://github.com/BepInEx/BepInEx/releases) 2. Move everything from step 1 to the local timberborn files.\\ ![My helpful screenshot](/assets/images/timberborn_local_files.png) 5. Open steam and run Timberborn # Manual Installation (guide for Mac/Steam) Source: [Installing BepInEx](https://docs.bepinex.dev/articles/user_guide/installation/index.html) {: .fs-1 .mt-n5 .mb-0 } All current mods for Timberborn use the framework [BepInEx](https://docs.bepinex.dev/index.html), which provides a great starting point for loading and interacting with the game! 1. Download the latest [BepInEx release](https://github.com/BepInEx/BepInEx/releases) 2. Move everything from step 1 to `~/Library/Application Support/Steam/steamapps/common/Timberborn` 3. Open `run_bepinex.sh` and edit it to have `executable_name=\"Timberborn.app\"` 4. Open terminal, type `chmod +x ` 5. Open steam and set the Launch Options for Timberborn to: `\"\" %command%` and run it. example: `\"/Users//Library/Application Support/Steam/steamapps/common/Timberborn/run_bepinex.sh\" %command%` # Installing mods 1. Download mods at [Mod.io](https://mod.io/g/timberborn) 2. Locate to `~/Library/Application Support/Steam/steamapps/common/Timberborn/BepInEx/plugins` 3. \\*Create a folder for each mod you downloaded (If the mod hasn't have one) 4. Move all files inside the downloaded mod to the newly created folder. \\*Optional step to prevent conflicts with other mods **Note:** You likely need [TimberAPI](https://timberborn.thunderstore.io/package/Timberborn_Central/TimberAPI/) ",
+    "url": "/using_mods/manual_install/",
+    
+    "relUrl": "/using_mods/manual_install/"
+  },"47": {
+    "doc": "Timberborn schemas",
+    "title": "Timberborn schemas",
+    "content": "# Timberborn schemas {: .no_toc } Here can you find all Timberborns specification schemas, this will help you how to overwrite or create specifications. For examples of all existing specifications check out the [TimberAPI Example](https://github.com/Timberborn-Modding-Central/TimberAPI/tree/main/TimberAPIExample/ExampleAssets/Specifications/v0.2.1.0). Or decompile the assets from Timberborn. ## {: .no_toc .text-delta } 1. TOC {:toc} # BonusType ```json { \"type\": \"object\", \"properties\": { \"Id\": { \"type\": \"string\", \"examples\": [ \"Fertility\" ] }, \"LocKey\": { \"type\": \"string\", \"examples\": [ \"Bonus.Fertility\" ] } }, \"examples\": [ { \"Id\": \"Fertility\", \"LocKey\": \"Bonus.Fertility\" } ] } ``` # Good ```json { \"type\": \"object\", \"properties\": { \"Id\": { \"type\": \"string\", \"examples\": [ \"GrilledSpadderdock\" ] }, \"BackwardCompatibleIds\": { \"type\": \"array\", \"items\": { \"type\": \"string\", \"examples\": [ \"GrilledSpadderdockSeeds\" ] }, \"examples\": [ [ \"GrilledSpadderdockSeeds\"] ] }, \"DisplayNameLocKey\": { \"type\": \"string\", \"examples\": [ \"Good.GrilledSpadderdock.DisplayName\" ] }, \"PluralDisplayNameLocKey\": { \"type\": \"string\", \"examples\": [ \"Good.GrilledSpadderdock.PluralDisplayName\" ] }, \"ConsumptionEffects\": { \"type\": \"array\", \"items\": { \"type\": \"object\", \"properties\": { \"NeedId\": { \"type\": \"string\", \"examples\": [ \"Food\" ] }, \"Points\": { \"type\": \"number\", \"examples\": [ 0.3 ] } }, \"examples\": [{ \"NeedId\": \"Food\", \"Points\": 0.3 }] }, \"examples\": [ [{ \"NeedId\": \"Food\", \"Points\": 0.3 }, { \"NeedId\": \"GrilledSpadderdock\", \"Points\": 0.2 }] ] }, \"GoodType\": { \"type\": \"string\", \"examples\": [ \"Box\" ] }, \"VisibleContainer\": { \"type\": \"object\", \"properties\": { \"Value\": { \"type\": \"string\", \"examples\": [ \"Box\" ] } }, \"examples\": [{ \"Value\": \"Box\" }] }, \"CarryingAnimation\": { \"type\": \"string\", \"examples\": [ \"CarryInHands\" ] }, \"Weight\": { \"type\": \"integer\", \"examples\": [ 1 ] }, \"TopBarGroupId\": { \"type\": \"string\", \"examples\": [ \"Food\" ] }, \"Icon\": { \"type\": \"string\", \"examples\": [ \"Sprites/Goods/GrilledSpadderdockIcon\" ] }, \"RequiredFeatureToggle\": { \"type\": \"string\", \"examples\": [ \"\" ] } }, \"examples\": [{ \"Id\": \"GrilledSpadderdock\", \"BackwardCompatibleIds\": [ \"GrilledSpadderdockSeeds\" ], \"DisplayNameLocKey\": \"Good.GrilledSpadderdock.DisplayName\", \"PluralDisplayNameLocKey\": \"Good.GrilledSpadderdock.PluralDisplayName\", \"ConsumptionEffects\": [{ \"NeedId\": \"Food\", \"Points\": 0.3 }, { \"NeedId\": \"GrilledSpadderdock\", \"Points\": 0.2 }], \"GoodType\": \"Box\", \"VisibleContainer\": { \"Value\": \"Box\" }, \"CarryingAnimation\": \"CarryInHands\", \"Weight\": 1, \"TopBarGroupId\": \"Food\", \"Icon\": \"Sprites/Goods/GrilledSpadderdockIcon\", \"RequiredFeatureToggle\": \"\" }] } ``` # NeedGroup ```json { \"type\": \"object\", \"properties\": { \"Id\": { \"type\": \"string\", \"examples\": [ \"Awe\" ] }, \"Order\": { \"type\": \"integer\", \"examples\": [ 70 ] }, \"DisplayNameLocKey\": { \"type\": \"string\", \"examples\": [ \"NeedGroup.Awe.DisplayName\" ] } }, \"examples\": [{ \"Id\": \"Awe\", \"Order\": 70, \"DisplayNameLocKey\": \"NeedGroup.Awe.DisplayName\" }] } ``` # Need ```json { \"type\": \"object\", \"properties\": { \"Id\": { \"type\": \"string\", \"examples\": [ \"Books\" ] }, \"BackwardCompatibleIds\": { \"type\": \"array\", \"items\": { \"type\": \"string\", \"examples\": [ \"Knowledge\" ] }, \"examples\": [ [ \"Knowledge\"] ] }, \"Order\": { \"type\": \"integer\", \"examples\": [ 48 ] }, \"NeedGroupId\": { \"type\": \"string\", \"examples\": [ \"Knowledge\" ] }, \"CharacterType\": { \"type\": \"string\", \"examples\": [ \"BeaverAdult\" ] }, \"DisplayNameLocKey\": { \"type\": \"string\", \"examples\": [ \"Good.Book.PluralDisplayName\" ] }, \"StartingValue\": { \"type\": \"number\", \"examples\": [ 0.0 ] }, \"MinimumValue\": { \"type\": \"number\", \"examples\": [ 0.0 ] }, \"MaximumValue\": { \"type\": \"number\", \"examples\": [ 1.0 ] }, \"DailyDelta\": { \"type\": \"number\", \"examples\": [ -0.1 ] }, \"ImportanceMultiplier\": { \"type\": \"number\", \"examples\": [ 1.0 ] }, \"CriticalNeedType\": { \"type\": \"object\", \"properties\": { \"Value\": { \"type\": \"string\", \"examples\": [ \"None\" ] } }, \"examples\": [{ \"Value\": \"None\" }] }, \"CriticalSpriteName\": { \"type\": \"string\", \"examples\": [ \"\" ] }, \"CriticalDescriptionLocKey\": { \"type\": \"string\", \"examples\": [ \"\" ] }, \"Bonuses\": { \"type\": \"array\", \"items\": { \"type\": \"object\", \"properties\": { \"Id\": { \"type\": \"string\", \"examples\": [ \"WorkingSpeed\" ] }, \"MultiplierDelta\": { \"type\": \"number\", \"examples\": [ 0.2 ] } }, \"examples\": [{ \"Id\": \"WorkingSpeed\", \"MultiplierDelta\": 0.2 }] }, \"examples\": [ [{ \"Id\": \"WorkingSpeed\", \"MultiplierDelta\": 0.2 }] ] }, \"DeathOnMinValue\": { \"type\": \"boolean\", \"examples\": [ false ] }, \"DeathMessageLocKey\": { \"type\": \"string\", \"examples\": [ \"\" ] }, \"Effectiveness\": { \"type\": \"number\", \"examples\": [ 1.0 ] }, \"Wastable\": { \"type\": \"boolean\", \"examples\": [ false ] }, \"PositiveWellbeing\": { \"type\": \"integer\", \"examples\": [ 3 ] } }, \"examples\": [{ \"Id\": \"Books\", \"BackwardCompatibleIds\": [ \"Knowledge\" ], \"Order\": 48, \"NeedGroupId\": \"Knowledge\", \"CharacterType\": \"BeaverAdult\", \"DisplayNameLocKey\": \"Good.Book.PluralDisplayName\", \"StartingValue\": 0.0, \"MinimumValue\": 0.0, \"MaximumValue\": 1.0, \"DailyDelta\": -0.1, \"ImportanceMultiplier\": 1.0, \"CriticalNeedType\": { \"Value\": \"None\" }, \"CriticalSpriteName\": \"\", \"CriticalDescriptionLocKey\": \"\", \"Bonuses\": [{ \"Id\": \"WorkingSpeed\", \"MultiplierDelta\": 0.2 }], \"DeathOnMinValue\": false, \"DeathMessageLocKey\": \"\", \"Effectiveness\": 1.0, \"Wastable\": false, \"PositiveWellbeing\": 3 }] } ``` # NeedAffectedBySoakedness ```json { \"type\": \"object\", \"properties\": { \"NeedId\": { \"type\": \"string\", \"examples\": [ \"WaterCooling\" ] }, \"PointsPerHour\": { \"type\": \"integer\", \"examples\": [ 6 ] } }, \"examples\": [{ \"NeedId\": \"WaterCooling\", \"PointsPerHour\": 6 }] } ``` # NeedAffectingWork ```json { \"type\": \"object\", \"properties\": { \"NeedId\": { \"type\": \"string\", \"examples\": [ \"Biofuel\" ] }, \"CriticalStatePreventsWork\": { \"type\": \"boolean\", \"examples\": [ true ] }, \"WorkRefusalWarningLocKey\": { \"type\": \"string\", \"examples\": [ \"Work.WorkRefusalWarning\" ] } }, \"examples\": [{ \"NeedId\": \"Biofuel\", \"CriticalStatePreventsWork\": true, \"WorkRefusalWarningLocKey\": \"Work.WorkRefusalWarning\" }] } ``` # Recipe ```json { \"type\": \"object\", \"properties\": { \"Id\": { \"type\": \"string\", \"examples\": [ \"Bread\" ] }, \"DisplayLocKey\": { \"type\": \"string\", \"examples\": [ \"Good.Bread.PluralDisplayName\" ] }, \"CycleDurationInHours\": { \"type\": \"number\", \"examples\": [ 0.42 ] }, \"CyclesCapacity\": { \"type\": \"integer\", \"examples\": [ 38 ] }, \"Ingredients\": { \"type\": \"array\", \"items\": { \"type\": \"object\", \"properties\": { \"Good\": { \"type\": \"object\", \"properties\": { \"Id\": { \"type\": \"string\", \"examples\": [ \"WheatFlour\" ] } }, \"examples\": [{ \"Id\": \"WheatFlour\" }] }, \"Amount\": { \"type\": \"integer\", \"examples\": [ 1 ] } }, \"examples\": [{ \"Good\": { \"Id\": \"WheatFlour\" }, \"Amount\": 1 }] }, \"examples\": [ [{ \"Good\": { \"Id\": \"WheatFlour\" }, \"Amount\": 1 }] ] }, \"Products\": { \"type\": \"array\", \"items\": { \"type\": \"object\", \"properties\": { \"Good\": { \"type\": \"object\", \"properties\": { \"Id\": { \"type\": \"string\", \"examples\": [ \"Bread\" ] } }, \"examples\": [{ \"Id\": \"Bread\" }] }, \"Amount\": { \"type\": \"integer\", \"examples\": [ 5 ] } }, \"examples\": [{ \"Good\": { \"Id\": \"Bread\" }, \"Amount\": 5 }] }, \"examples\": [ [{ \"Good\": { \"Id\": \"Bread\" }, \"Amount\": 5 }] ] }, \"ProducedSciencePoints\": { \"type\": \"integer\", \"examples\": [ 0 ] }, \"Fuel\": { \"type\": \"object\", \"properties\": { \"Id\": { \"type\": \"string\", \"examples\": [ \"Log\" ] } }, \"examples\": [{ \"Id\": \"Log\" }] }, \"CyclesFuelLasts\": { \"type\": \"integer\", \"examples\": [ 10 ] }, \"FuelCapacity\": { \"type\": \"integer\", \"examples\": [ 5 ] } }, \"examples\": [{ \"Id\": \"Bread\", \"DisplayLocKey\": \"Good.Bread.PluralDisplayName\", \"CycleDurationInHours\": 0.42, \"CyclesCapacity\": 38, \"Ingredients\": [{ \"Good\": { \"Id\": \"WheatFlour\" }, \"Amount\": 1 }], \"Products\": [{ \"Good\": { \"Id\": \"Bread\" }, \"Amount\": 5 }], \"ProducedSciencePoints\": 0, \"Fuel\": { \"Id\": \"Log\" }, \"CyclesFuelLasts\": 10, \"FuelCapacity\": 5 }] } ``` # TopBar ```json { \"type\": \"object\", \"properties\": { \"Id\": { \"type\": \"string\", \"examples\": [ \"Food\" ] }, \"Order\": { \"type\": \"integer\", \"examples\": [ 2 ] }, \"DisplayNameLocKey\": { \"type\": \"string\", \"examples\": [ \"TopBar.Food\" ] }, \"Icon\": { \"type\": \"string\", \"examples\": [ \"Sprites/TopBar/Food\" ] }, \"SingleResourceGroup\": { \"type\": \"boolean\", \"examples\": [ false ] } }, \"examples\": [{ \"Id\": \"Food\", \"Order\": 2, \"DisplayNameLocKey\": \"TopBar.Food\", \"Icon\": \"Sprites/TopBar/Food\", \"SingleResourceGroup\": false }] } ``` # WorkerType ```json { \"type\": \"object\", \"properties\": { \"Id\": { \"type\": \"string\", \"examples\": [ \"Beaver\" ] }, \"DisplayNameLocKey\": { \"type\": \"string\", \"examples\": [ \"Beaver.PluralDisplayName\" ] }, \"WorkerOnlyTextLocKey\": { \"type\": \"string\", \"examples\": [ \"Work.BeaverOnly\" ] }, \"IgnoresWorkingHours\": { \"type\": \"boolean\", \"examples\": [ false ] } }, \"examples\": [{ \"Id\": \"Beaver\", \"DisplayNameLocKey\": \"Beaver.PluralDisplayName\", \"WorkerOnlyTextLocKey\": \"Work.BeaverOnly\", \"IgnoresWorkingHours\": false }] } ``` ```json { \"type\": \"object\", \"properties\": { \"BonusId\": { \"type\": \"string\", \"examples\": [ \"CuttingSuccessChance\" ] }, \"GoodId\": { \"type\": \"string\", \"examples\": [ \"Log\" ] } }, \"examples\": [{ \"BonusId\": \"CuttingSuccessChance\", \"GoodId\": \"Log\" }] } ``` # Faction ```json { \"type\": \"object\", \"properties\": { \"Id\": { \"type\": \"string\", \"examples\": [ \"Folktails\" ] }, \"Order\": { \"type\": \"integer\", \"examples\": [ 0 ] }, \"DisplayNameLocKey\": { \"type\": \"string\", \"examples\": [ \"Faction.Folktails.DisplayName\" ] }, \"DescriptionLocKey\": { \"type\": \"string\", \"examples\": [ \"Faction.Folktails.Description\" ] }, \"Avatar\": { \"type\": \"string\", \"examples\": [ \"Sprites/Avatars/FolktailsAdult\" ] }, \"ChildAvatar\": { \"type\": \"string\", \"examples\": [ \"Sprites/Avatars/FolktailsChild\" ] }, \"GolemAvatar\": { \"type\": \"string\", \"examples\": [ \"Sprites/Avatars/FolktailsGolem\" ] }, \"Logo\": { \"type\": \"string\", \"examples\": [ \"Sprites/Avatars/FolktailsLogo\" ] }, \"NewGameFullAvatar\": { \"type\": \"string\", \"examples\": [ \"Sprites/Avatars/FolktailsFullNewGame\" ] }, \"NewGameHeadAvatar\": { \"type\": \"string\", \"examples\": [ \"Sprites/Avatars/FolktailsHeadNewGame\" ] }, \"Materials\": { \"type\": \"array\", \"items\": { \"type\": \"string\", \"examples\": [ \"Materials/Beavers/Folktails/Adult/BeaverAdult1.Folktails\" ] }, \"examples\": [ [ \"Materials/Beavers/Folktails/Adult/BeaverAdult1.Folktails\", \"Materials/Beavers/Folktails/Adult/BeaverAdult2.Folktails\" ] ] }, \"ChildMaterials\": { \"type\": \"array\", \"items\": { \"type\": \"string\", \"examples\": [ \"Materials/Beavers/Folktails/Child/BeaverChild1.Folktails\" ] }, \"examples\": [ [ \"Materials/Beavers/Folktails/Child/BeaverChild1.Folktails\", \"Materials/Beavers/Folktails/Child/BeaverChild2.Folktails\", \"Materials/Beavers/Folktails/Child/BeaverChild3.Folktails\" ] ] }, \"PrerequisiteFaction\": { \"type\": \"string\", \"examples\": [ \"\" ] }, \"AverageWellbeingToUnlock\": { \"type\": \"integer\", \"examples\": [ 0 ] }, \"CommonBuildings\": { \"type\": \"array\", \"items\": { \"type\": \"string\", \"examples\": [ \"Buildings/Decoration/BeaverStatue/BeaverStatue.Folktails\" ] }, \"examples\": [ [ \"Buildings/Decoration/BeaverStatue/BeaverStatue.Folktails\", \"Buildings/Decoration/Bench/Bench.Folktails\", \"Buildings/Decoration/LogFence/LogFence.Folktails\" ] ] }, \"UniqueBuildings\": { \"type\": \"array\", \"items\": { \"type\": \"string\", \"examples\": [ \"Buildings/Decoration/Scarecrow/Scarecrow.Folktails\" ] }, \"examples\": [ [ \"Buildings/Decoration/Scarecrow/Scarecrow.Folktails\", \"Buildings/Decoration/WindGauge/WindGauge.Folktails\", \"Buildings/Food/Beehive/Beehive.Folktails\" ] ] }, \"Needs\": { \"type\": \"array\", \"items\": { \"type\": \"string\", \"examples\": [ \"BeaverStatue\" ] }, \"examples\": [ [ \"BeaverStatue\", \"BeeSting\", \"Biofuel\" ] ] }, \"Goods\": { \"type\": \"array\", \"items\": { \"type\": \"string\", \"examples\": [ \"Berries\" ] }, \"examples\": [ [ \"Berries\", \"Biofuel\", \"Book\" ] ] }, \"NeedModifications\": { \"type\": \"array\", \"items\": {}, \"examples\": [ [] ] }, \"StartingBuildingId\": { \"type\": \"string\", \"examples\": [ \"DistrictCenter.Folktails\" ] } }, \"examples\": [ { \"Id\": \"Folktails\", \"Order\": 0, \"DisplayNameLocKey\": \"Faction.Folktails.DisplayName\", \"DescriptionLocKey\": \"Faction.Folktails.Description\", \"Avatar\": \"Sprites/Avatars/FolktailsAdult\", \"ChildAvatar\": \"Sprites/Avatars/FolktailsChild\", \"GolemAvatar\": \"Sprites/Avatars/FolktailsGolem\", \"Logo\": \"Sprites/Avatars/FolktailsLogo\", \"NewGameFullAvatar\": \"Sprites/Avatars/FolktailsFullNewGame\", \"NewGameHeadAvatar\": \"Sprites/Avatars/FolktailsHeadNewGame\", \"Materials\": [ \"Materials/Beavers/Folktails/Adult/BeaverAdult1.Folktails\", \"Materials/Beavers/Folktails/Adult/BeaverAdult2.Folktails\", \"Materials/Beavers/Folktails/Adult/BeaverAdult3.Folktails\", \"Materials/Beavers/Folktails/Adult/BeaverAdult4.Folktails\", \"Materials/Beavers/Folktails/Adult/BeaverAdult5.Folktails\" ], \"ChildMaterials\": [ \"Materials/Beavers/Folktails/Child/BeaverChild1.Folktails\", \"Materials/Beavers/Folktails/Child/BeaverChild2.Folktails\", \"Materials/Beavers/Folktails/Child/BeaverChild3.Folktails\" ], \"PrerequisiteFaction\": \"\", \"AverageWellbeingToUnlock\": 0, \"CommonBuildings\": [ \"Buildings/Decoration/BeaverStatue/BeaverStatue.Folktails\", \"Buildings/Decoration/Bench/Bench.Folktails\", \"Buildings/Decoration/LogFence/LogFence.Folktails\", \"Buildings/Decoration/MetalFence/MetalFence.Folktails\", \"Buildings/Decoration/PlankFence/PlankFence.Folktails\", \"Buildings/Decoration/Roof1x1/Roof1x1.Folktails\", \"Buildings/Decoration/Roof1x2/Roof1x2.Folktails\", \"Buildings/Decoration/Roof2x2/Roof2x2.Folktails\", \"Buildings/Decoration/Roof2x3/Roof2x3.Folktails\", \"Buildings/Decoration/Roof3x2/Roof3x2.Folktails\", \"Buildings/Decoration/Shrub/Shrub.Folktails\", \"Buildings/Food/AquaticFarmhouse/AquaticFarmhouse.Folktails\", \"Buildings/Food/Bakery/Bakery.Folktails\", \"Buildings/Food/FarmHouse/FarmHouse.Folktails\", \"Buildings/Food/GathererFlag/GathererFlag.Folktails\", \"Buildings/Food/Grill/Grill.Folktails\", \"Buildings/Food/Gristmill/Gristmill.Folktails\", \"Buildings/Labor/BuildersHut/BuildersHut.Folktails\", \"Buildings/Labor/DistributionPost/DistributionPost.Folktails\", \"Buildings/Labor/DropOffPoint/DropOffPoint.Folktails\", \"Buildings/Labor/HaulingPost/HaulingPost.Folktails\", \"Buildings/Landscaping/Dam/Dam.Folktails\", \"Buildings/Landscaping/DoubleFloodgate/DoubleFloodgate.Folktails\", \"Buildings/Landscaping/Dynamite/Dynamite.Folktails\", \"Buildings/Landscaping/ExplosivesFactory/ExplosivesFactory.Folktails\", \"Buildings/Landscaping/Floodgate/Floodgate.Folktails\", \"Buildings/Landscaping/Levee/Levee.Folktails\", \"Buildings/Landscaping/TripleFloodgate/TripleFloodgate.Folktails\", \"Buildings/Wellbeing/Campfire/Campfire.Folktails\", \"Buildings/Wellbeing/Carousel/Carousel.Folktails\", \"Buildings/Wellbeing/Healer/Healer.Folktails\", \"Buildings/Wellbeing/Lido/Lido.Folktails\", \"Buildings/Wellbeing/MedicalBed/MedicalBed.Folktails\", \"Buildings/Wellbeing/MudBath/MudBath.Folktails\", \"Buildings/Wellbeing/RooftopTerrace/RooftopTerrace.Folktails\", \"Buildings/Wellbeing/Shower/Shower.Folktails\", \"Buildings/Wellbeing/Shrine/Shrine.Folktails\", \"Buildings/Wellbeing/TeethGrindstone/TeethGrindstone.Folktails\", \"Buildings/Wellbeing/Temple/Temple.Folktails\", \"Buildings/Metal/Mine/Mine.Folktails\", \"Buildings/Metal/ScavengerFlag/ScavengerFlag.Folktails\", \"Buildings/Metal/Smelter/Smelter.Folktails\", \"Buildings/Monuments/FlameOfProgress/FlameOfProgress.Folktails\", \"Buildings/Monuments/LaborerMonument/LaborerMonument.Folktails\", \"Buildings/Monuments/TributeToIngenuity/TributeToIngenuity.Folktails\", \"Buildings/Paths/DistrictCenter/DistrictCenter.Folktails\", \"Buildings/Paths/DistrictGate/DistrictGate.Folktails\", \"Buildings/Paths/DoublePlatform/DoublePlatform.Folktails\", \"Buildings/Paths/MetalPlatform/MetalPlatform.Folktails\", \"Buildings/Paths/Path/Path.Folktails\", \"Buildings/Paths/Platform/Platform.Folktails\", \"Buildings/Paths/SuspensionBridge1x1/SuspensionBridge1x1.Folktails\", \"Buildings/Paths/SuspensionBridge2x1/SuspensionBridge2x1.Folktails\", \"Buildings/Paths/SuspensionBridge3x1/SuspensionBridge3x1.Folktails\", \"Buildings/Paths/SuspensionBridge4x1/SuspensionBridge4x1.Folktails\", \"Buildings/Paths/SuspensionBridge5x1/SuspensionBridge5x1.Folktails\", \"Buildings/Paths/SuspensionBridge6x1/SuspensionBridge6x1.Folktails\", \"Buildings/Paths/TriplePlatform/TriplePlatform.Folktails\", \"Buildings/Paths/WoodenStairs/WoodenStairs.Folktails\", \"Buildings/Power/Crane/Crane.Folktails\", \"Buildings/Power/DevBattery/DevBattery\", \"Buildings/Power/DevPowerGenerator/DevPowerGenerator\", \"Buildings/Power/Flywheel/Flywheel.Folktails\", \"Buildings/Power/PowerShaftHigh/PowerShaftHigh.Folktails\", \"Buildings/Power/PowerShaftIntersection/PowerShaftIntersection.Folktails\", \"Buildings/Power/PowerShaftStraight/PowerShaftStraight.Folktails\", \"Buildings/Power/PowerShaftTShapedIntersection/PowerShaftTShapedIntersection.Folktails\", \"Buildings/Power/PowerShaftTurn/PowerShaftTurn.Folktails\", \"Buildings/Power/PowerWheel/PowerWheel.Folktails\", \"Buildings/Power/WaterWheel/WaterWheel.Folktails\", \"Buildings/Science/Inventor/Inventor.Folktails\", \"Buildings/Science/GolemFactory/GolemFactory.Folktails\", \"Buildings/Science/GolemPartFactory/GolemPartFactory.Folktails\", \"Buildings/Science/Observatory/Observatory.Folktails\", \"Buildings/Storage/LargeWarehouse/LargeWarehouse.Folktails\", \"Buildings/Storage/LogPile/LogPile.Folktails\", \"Buildings/Storage/SmallWarehouse/SmallWarehouse.Folktails\", \"Buildings/Water/LargeWaterTank/LargeWaterTank.Folktails\", \"Buildings/Water/MechanicalWaterPump/MechanicalWaterPump.Folktails\", \"Buildings/Water/SmallWaterTank/SmallWaterTank.Folktails\", \"Buildings/Water/StreamGauge/StreamGauge.Folktails\", \"Buildings/Water/WaterDump/WaterDump.Folktails\", \"Buildings/Water/WaterPump/WaterPump.Folktails\", \"Buildings/Wood/Forester/Forester.Folktails\", \"Buildings/Wood/GearWorkshop/GearWorkshop.Folktails\", \"Buildings/Wood/LumberMill/LumberMill.Folktails\", \"Buildings/Wood/LumberjackFlag/LumberjackFlag.Folktails\", \"Buildings/Wood/PaperMill/PaperMill.Folktails\", \"Buildings/Wood/PrintingPress/PrintingPress.Folktails\", \"Buildings/Wood/TappersShack/TappersShack.Folktails\", \"Buildings/Wood/WoodWorkshop/WoodWorkshop.Folktails\" ], \"UniqueBuildings\": [ \"Buildings/Decoration/Scarecrow/Scarecrow.Folktails\", \"Buildings/Decoration/WindGauge/WindGauge.Folktails\", \"Buildings/Food/Beehive/Beehive.Folktails\", \"Buildings/Housing/DoubleLodge/DoubleLodge.Folktails\", \"Buildings/Housing/FlippedLodge/FlippedLodge.Folktails\", \"Buildings/Housing/Lodge/Lodge.Folktails\", \"Buildings/Housing/MiniLodge/MiniLodge.Folktails\", \"Buildings/Housing/TripleLodge/TripleLodge.Folktails\", \"Buildings/Power/LargeWindmill/LargeWindmill.Folktails\", \"Buildings/Power/Windmill/Windmill.Folktails\", \"Buildings/Science/BiofuelRefinery/BiofuelRefinery.Folktails\", \"Buildings/Science/BiofuelTank/BiofuelTank.Folktails\", \"Buildings/Science/DisposalFacility/DisposalFacility.Folktails\", \"Buildings/Storage/UndergroundWarehouse/UndergroundWarehouse.Folktails\", \"Buildings/Water/IrrigationTower/IrrigationTower.Folktails\" ], \"Needs\": [ \"BeaverStatue\", \"BeeSting\", \"Biofuel\", \"Books\", \"Bread\", \"BrokenTeeth\", \"Campfire\", \"Carousel\", \"Carrots\", \"CattailCracker\", \"FlameOfProgress\", \"Food\", \"GrilledChestnuts\", \"GrilledPotatoes\", \"GrilledSpadderdock\", \"Injury\", \"LaborerMonument\", \"Lido\", \"MaplePastry\", \"MudBath\", \"Overheat\", \"Roof\", \"RooftopTerrace\", \"Shelter\", \"Shrine\", \"Shrub\", \"PollutionPoisoning\", \"PollutedMechanisms\", \"Sleep\", \"SunflowerSeeds\", \"Temple\", \"TributeToIngenuity\", \"Water\", \"WetFur\", \"WaterCooling\", \"Scarecrow\", \"ShovelAndPan\" ], \"Goods\": [ \"Berries\", \"Biofuel\", \"Book\", \"Bread\", \"Carrot\", \"CattailCracker\", \"CattailFlour\", \"CattailRoot\", \"Chestnut\", \"Dandelion\", \"Explosives\", \"Gear\", \"GolemChassis\", \"GolemHead\", \"GolemLimb\", \"GrilledChestnut\", \"GrilledPotato\", \"GrilledSpadderdock\", \"Log\", \"MaplePastry\", \"MapleSyrup\", \"Medicine\", \"MetalBlock\", \"Paper\", \"PineResin\", \"Plank\", \"Potato\", \"ScrapMetal\", \"Spadderdock\", \"SunflowerSeeds\", \"TreatedPlank\", \"Water\", \"WheatFlour\", \"Wheat\" ], \"NeedModifications\": [], \"StartingBuildingId\": \"DistrictCenter.Folktails\" } ] } ``` # WellbeingTier ```json { \"$schema\": \"http://json-schema.org/draft-04/schema#\", \"type\": \"object\", \"properties\": { \"CharacterType\": { \"type\": \"string\" }, \"BonusId\": { \"type\": \"string\" }, \"Bonuses\": { \"type\": \"array\", \"items\": [ { \"type\": \"object\", \"properties\": { \"Wellbeing\": { \"type\": \"integer\" }, \"Multiplier\": { \"type\": \"number\" } }, \"required\": [ \"Wellbeing\", \"Multiplier\" ] } ] }, \"WellbeingThreshold\": { \"type\": \"integer\" }, \"MultiplierIncrement\": { \"type\": \"number\" } }, \"examples\": [{ \"CharacterType\": \"BeaverAdult\", \"BonusId\": \"LifeExpectancy\", \"Bonuses\": [ { \"Wellbeing\": 7, \"Multiplier\": 0.2 }], \"WellbeingThreshold\": 10, \"MultiplierIncrement\": 0.1 }] } ``` ",
+    "url": "/specifications/schemas/",
+    
+    "relUrl": "/specifications/schemas/"
+  }
+}
