@@ -66,6 +66,8 @@ To get started with custom code for Timberborn mods, follow these steps:
 1. Create a new .net standard 2.1 code project 
 1. Add the nuget package `TimberAPI`. [Visual studio guide](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio), [Rider guide](https://www.jetbrains.com/help/rider/Using_NuGet.html)
 
+`TimberAPI` depends on the bepinex nuget package repository. You might need to add this as a source `https://nuget.bepinex.dev/v3/index.json`.
+
 To bind your custom classes to Timberborn's dependency container create a class that inherits the `IConfigurator` interface. Then using the `Configure()` method you can bind 
 the classes. The Configurator class will laso need an `[Configurator]` attribute, so TimberAPI knows where the Configurator is used. See [Dependency injection](/../dependency_injection/)
 
