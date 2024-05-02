@@ -69,7 +69,7 @@ Regarding the Scenes array above, this array can have any assortment of the avai
 
 It's worth noting that even if your modded building (or other assets) are not available inside the Map Editor, you will still need to load them in the Map Editor scene as well as the In Game scene, otherwise the game will crash when entering the map editor.
 
-Whenever the scene is swapped, all assets for that scene are unloaded, and all bundles needed for the next scene are loaded, so if your bundle is not needed at the main menu, but you specify "All" for that asset, then the entire bundle will be loaded and then unloaded for the Main Menu unnecessarily.
+Whenever the scene is swapped, all assets for that scene are unloaded, and all bundles needed for the next scene are loaded. If your bundle is not needed at the main menu, but you specify "All" for that asset, then the entire bundle will be loaded and then unloaded for the Main Menu unnecessarily.
 
 ## Schema
 
