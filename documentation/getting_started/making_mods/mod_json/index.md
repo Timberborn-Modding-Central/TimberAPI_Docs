@@ -21,7 +21,7 @@ The mod.json file is responsible for the main information about your mod, the as
 
 ### Composition
 
-The following is an example of a mod.json file. we will run through the components below.
+The following is an example of a mod.json file. We will run through the components below.
 
 ```json
 {
@@ -44,7 +44,7 @@ The following is an example of a mod.json file. we will run through the componen
 
 | Parameter | Usage |
 | --- | --- |
-| Name | Pretty straight-forward; this is the nme for your mod. |
+| Name | Pretty straight-forward; this is the name for your mod. |
 | Version | This is the current version number for your mod. Don't forget to change this when releasing a newer version for your mod. |
 | UniqueId | This is the ID that your mod is assigned. The general convention for this is to use a unique author name associated with you, and the mod name separated by a full stop. This practice is to try and reduce the chance of a name clash since the ID needs to be unique. |
 | MinimumApiVersion | The lowest version of TimberAPI that this version of the mod needs in order to run. If the version being used by theplayer is lower than the version specified here, then an error will be thrown and the mod will not load. |
