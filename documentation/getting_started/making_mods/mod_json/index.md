@@ -47,10 +47,10 @@ The following is an example of a mod.json file. We will run through the componen
 | Name | Pretty straight-forward; this is the name for your mod. |
 | Version | This is the current version number for your mod. Don't forget to change this when releasing a newer version for your mod. |
 | UniqueId | This is the ID that your mod is assigned. The general convention for this is to use a unique author name associated with you, and the mod name separated by a full stop. This practice is to try and reduce the chance of a name clash since the ID needs to be unique. |
-| MinimumApiVersion | The lowest version of TimberAPI that this version of the mod needs in order to run. If the version being used by theplayer is lower than the version specified here, then an error will be thrown and the mod will not load. |
+| MinimumApiVersion | The lowest version of TimberAPI that this version of the mod needs in order to run. If the version being used by the player is lower than the version specified here, then an error will be thrown and the mod will not load. |
 | MinimumGameVersion | The lowest version of Timberborn that this version of the mod is built for. It has similar behaviour to MinimumApiVersion above. |
 | EntryDll | When specified, this informs the starting DLL that your mod uses if it uses custom code. Generally, this will be the root namespace of your mod's code. It's generally easier to keep your mod's code all within one root namespace. |
-| Assets | This array informs what sset bundles are used in your mod and when they should be loaded. This means you can have different bundles loaded in different scenes. |
+| Assets | This array informs what asset bundles are used in your mod and when they should be loaded. This means you can have different bundles loaded in different scenes. |
 
 An entry in the Assets array uses the following schema:
 
