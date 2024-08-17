@@ -1,35 +1,46 @@
 ---
-title: Home
-nav_order: -100
+# https://vitepress.dev/reference/default-theme-home-page
 layout: home
-has_toc: true
+
+hero:
+  name: "TimberApi"
+  text: "Modding made easy"
+  tagline: Timberborn unofficial modding API
+  actions:
+    - theme: brand
+      text: Getting started
+      link: /markdown-examples
+
+features:
+  - icon: 🛠️
+    title: uibuilder
+    details: Create your own visual element presets within code
+    link: https://vueuse.org/
+  - icon: 🔨️
+    title: Tool & Tool Groups
+    details: Create or customize tool & tool groups
+    link: https://vueuse.org/
+  - icon: 🔗️
+    title: Entity Linker
+    details: Attach buildings to each other
+    link: https://vueuse.org/
 ---
 
-# TimberAPI
-Unofficial API to enable easier Timberborn modding
+<script setup>
+import { VPTeamMembers } from 'vitepress/theme';
 
-### Currently supported features:
-1. Bind your code easily with [dependency injection](/dependency_injection/)
-1. A comprehensive [UI component builder](/ui_builder/)
-1. [Asset and object injection](/custom_assets/), provide your own icons or even unity bundles
-1. Modify and add [specifications](/specifications/) to change the game - with just JSON
-1. Labels and localization support
-1. [Link entities](/timberapi/) together for data communication
-1. [Configuration files](/config/) for easy alteration of the mods behaviour
-
-## Provided Sample Plugin with API examples
-**[Example Plugin](https://github.com/Timberborn-Modding-Central/TimberAPI/tree/main/Examples)**
+const members = [
+  {
+    avatar: 'https://github.com/KYPremco.png',
+    name: 'TheBloodEyes',
+    title: 'Creator',
+    links: [
+      { icon: 'github', link: 'https://github.com/KYPremco' },
+    ]
+  },
+]
+</script>
 
 ## Contributors
 
-{% for contributor in site.github.contributors %}
-    {% if contributor.type == 'Bot' %}
-        {% continue %}
-    {% endif %}
-
-
-[![]({{ contributor.avatar_url }})]({{ contributor.html_url }})
-{: .avatar .circle }
-
-
-{% endfor %}
+<VPTeamMembers size="small" :members="members" />
