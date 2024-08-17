@@ -16,20 +16,19 @@ export default defineConfig({
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         nav: [
-
             { text: 'Home', link: '/' },
-            {
-                text: 'Guides',
-                items: [
-                    { text: 'Getting started', link: '/item-1' },
-                    { text: 'uibuilder', link: '/item-2' },
-                    { text: 'Tools', link: '/item-3' },
-                    { text: 'Tool Groups', link: '/item-3' },
-                    { text: 'Entity Linker', link: '/item-3' },
-                    { text: 'Building Specifications', link: '/item-3' },
-                ]
-            },
-            { text: 'Changelogs', link: '/changelogs' },
+            // {
+            //     text: 'Guides',
+            //     items: [
+            //         { text: 'Getting started', link: '/item-1' },
+            //         { text: 'UIBuilder', link: '/item-2' },
+            //         { text: 'Tools', link: '/item-3' },
+            //         { text: 'Tool Groups', link: '/item-3' },
+            //         { text: 'Entity Linker', link: '/item-3' },
+            //         { text: 'Building Specifications', link: '/item-3' },
+            //     ]
+            // },
+            // { text: 'Changelogs', link: '/changelogs' },
             { text: 'Mechanistry', link: 'https://mechanistry.com/' }
         ],
 
@@ -124,9 +123,9 @@ export default defineConfig({
             },
         ],
 
-        search: {
-            provider: 'local'
-        },
+        // search: {
+        //     provider: 'local'
+        // },
 
         editLink: {
             pattern: 'https://github.com/Timberborn-Modding-Central/TimberAPI_Docs/edit/main/:path'

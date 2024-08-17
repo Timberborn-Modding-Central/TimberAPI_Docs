@@ -3,8 +3,9 @@
 layout: home
 
 hero:
-  name: "TimberApi"
-  text: "Modding made easy"
+  name: "TimberApi, WIP"
+  text: "Documentation work in progress"
+#  text: "Modding made easy"
   tagline: Timberborn unofficial modding API
   actions:
     - theme: brand
