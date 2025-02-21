@@ -17,17 +17,17 @@ export default defineConfig({
         // https://vitepress.dev/reference/default-theme-config
         nav: [
             { text: 'Home', link: '/' },
-            // {
-            //     text: 'Guides',
-            //     items: [
-            //         { text: 'Getting started', link: '/item-1' },
-            //         { text: 'UIBuilder', link: '/item-2' },
-            //         { text: 'Tools', link: '/item-3' },
-            //         { text: 'Tool Groups', link: '/item-3' },
-            //         { text: 'Entity Linker', link: '/item-3' },
-            //         { text: 'Building Specifications', link: '/item-3' },
-            //     ]
-            // },
+            {
+                text: 'Guides',
+                items: [
+                    { text: 'Getting started', link: '/getting-started/using-mods' },
+                    { text: 'UIBuilder', link: '/timber-api/uibuilder/basic-usage' },
+                    { text: 'Tools', link: '/timber-api/tool-and-toolgroups/tools' },
+                    { text: 'Tool Groups', link: '/timber-api/tool-and-toolgroups/tool-groups' },
+                    { text: 'Building Specifications', link: '/timber-api/building-specification' },
+                    { text: 'Entity Linker', link: '/timber-api/entity-linker' },
+                ]
+            },
             // { text: 'Changelogs', link: '/changelogs' },
             { text: 'Mechanistry', link: 'https://mechanistry.com/' }
         ],

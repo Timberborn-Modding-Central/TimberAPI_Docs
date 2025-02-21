@@ -16,15 +16,15 @@ features:
   - icon: 🛠️
     title: uibuilder
     details: Create your own visual element presets within code
-    link: https://vueuse.org/
+    link: /timber-api/uibuilder/basic-usage
   - icon: 🔨️
     title: Tool & Tool Groups
     details: Create or customize tool & tool groups
-    link: https://vueuse.org/
+    link: /timber-api/tool-and-toolgroups
   - icon: 🔗️
-    title: Entity Linker
-    details: Attach buildings to each other
-    link: https://vueuse.org/
+    title: Building Specification
+    details: Customize building information
+    link: /timber-api/building-specification
 ---
 
 <script setup>
